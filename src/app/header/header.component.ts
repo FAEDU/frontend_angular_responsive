@@ -9,8 +9,7 @@ import { LoaderService } from '../services/common.service';
 })
 export class HeaderComponent implements OnInit {
   showPage :boolean= true;
-  showHeaderFooter=true;
-  public loggedIn:boolean=false;
+  public loggedIn=true;
   constructor(private loaderService: LoaderService) {
   
    }
