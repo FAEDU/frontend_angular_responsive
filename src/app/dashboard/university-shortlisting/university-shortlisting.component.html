@@ -1,0 +1,253 @@
+             
+
+
+   <div style=" background-color: white" *ngIf="who;else elseblock">
+       <h1 style="font:bold;margin-top:15%;text-align: left;">Welcome Back {{name}}</h1>
+   </div>
+   <ng-template #elseblock>
+    <div class="main-content">
+      <div class="section__content section__content--p30">
+          <div class="container-fluid">
+              <br>
+              <div class="row" style="margin-top: 8%;">
+                  <!--Country-->
+                <div class="col-md-2" style="padding-top: 3px;">
+                  <div  class="input-group" >
+                  <select [(ngModel)]="locationfilter" (click)="locatefilteration($event)"  class="custom-select js-select2" name="country">
+                   <option value="">Select Country</option>
+                    <option *ngFor="let option of options" value="{{option}}">{{option}}</option> 
+                  </select>
+                  </div>
+                </div>
+                
+                <!--Courses-->
+                <div class="col-md-2" style="padding-top: 3px;">
+                  <div>
+                  <select [(ngModel)]="c" (click)="coursefilteration($event)" class="input-group" name="course" class="custom-select" >
+                   <option value="">Select Course</option>
+                    <option *ngFor="let course of courses2" value="{{course}}" >{{course}}</option> 
+                  </select>
+                  </div>
+                </div>
+                <!--Gre Score-->
+                <div class="col-md-2" style="padding-top: 3px;">
+                  <div>
+                  <select [(ngModel)]="filtergre" (click)="grefilteration($event)" class="input-group " name="course" class="custom-select" >
+                   <option value="">GRE Score</option>  
+                                        <option value=340>> 340</option>
+                                        <option value=320>> 320</option>
+                                        <option value=300>> 300</option>
+                                        <option value=280>> 280</option>
+                                        <option value=260>> 260</option>
+                  </select>
+                  </div>
+                </div> 
+                <!--Average IELTS-->
+                <div class="col-md-2" style="padding-top: 3px;">
+                  <div >
+                  <select [(ngModel)]="ieltsfilter" (click)="ieltsfilteration($event)" class="input-group " name="course" class="custom-select" >
+                                        <option value="">Average IELTS</option>
+                                        <option value=10>> 10</option>
+                                        <option value=9>> 9</option>
+                                        <option value=8>> 8</option>
+                                        <option value=7>> 7</option>
+                                        <option value=6>> 6</option>
+                                        <option value=5>> 5</option>
+                                        <option value=4>> 4</option>
+                                        <option value=3>> 3</option>
+                                        <option value=2>> 2</option>
+                                        <option value=1>> 1</option>
+                  </select>
+                  </div>
+                </div>
+                                                                <!--TOEFL Score-->
+                <div class="col-md-2" style="padding-top: 3px;">
+                  <div>
+                  <select [(ngModel)]="toeflfilter" (click)="toeflfilteration($event)" class="input-group " name="course" class="custom-select" >
+                   <option value="">TOEFL Score</option>  
+                                        <option value="">TOEFL Score</option>    
+                                        
+                                            <option value=120>> 120</option>
+                                            <option value=100>> 100</option>
+                                            <option value=80>> 80</option>
+                                            <option value=60>> 60</option>
+                                            <option value=40>> 40</option>
+                                            <option value=20>> 20</option>
+                  </select>
+                  </div>
+                </div> 
+                                                                <!--Select Rank-->
+                <div class="col-md-2" style="padding-top: 3px;">
+                  <div >
+                  <select [(ngModel)]="rankfilter" (click)="rankingfilteration($event)" class="input-group " name="course" class="custom-select" >
+                   <option value="">Select Rank</option>  
+                                        <option value="">Select Rank</option>
+                                        <option value=5>Top 5</option>
+                                        <option value=10>Top 10</option>
+                                        <option value=20>Top 20</option>
+                                        <option value=30>Top 30</option>
+                                        <option value=40>Top 40</option>
+                                        <option value=50>Top 50</option>
+                                        <option value=60>Top 60</option>
+                                        <option value=70>Top 70</option>
+                                        <option value=80>Top 80</option>
+                                      <option value=90>Top 90</option>
+                                      <option value=100>Top 100</option>
+                  </select>
+                  </div>
+                </div>  
+              
+              </div>
+                <div class="row" style="margin-top: 1%; ">
+                <div class="col-md-3">
+                  <div>
+                  <select [(ngModel)]="fees" (click)="feesfilteration($event)" class="input-group " name="course" class="custom-select" >
+                   <option value="">Average CourseFees</option>  
+                                        <option value="">Average CourseFees</option>
+                                        <option value=110000>>1,10,000</option>
+                                        <option value=100000>>1,00,000</option>
+                                        <option value=90000>>90,000</option>
+                                        <option value=80000>>80,000</option>
+                                        <option value=60000>>60,000</option>
+                                        <option value=40000>>40,000</option>
+                                        <option value=30000>>30,000</option>
+                                        <option value=20000>>20,000</option>
+                                        <option value=10000>>10,000</option>
+                  </select>
+                  </div>
+                </div> 
+              <div class="col-md-6" style="text-align: center; padding-top: 6px;">  
+  <button style="width: 120px;  color: white;  background: #4272d7;" class="btn btn-outline-info" type="button" (click)="applyfilter()">Apply Filter</button><button style="margin-left: 1%; width: 100px;" class="btn btn-danger" type="button" (click)="reset()">Reset</button>
+  <input name="search" [(ngModel)]="searchbar" style="margin-left:4%;margin-right:3%;text-align: center" type="text"><button (click)="search()">search</button>
+
+</div>
+  </div><br><br>
+              <div class="row">
+
+                </div>
+              <div class="row">
+                  <div *ngFor= "let list of finaldata" class="col-lg-6 animated fadeInDown">
+                      <div class="au-card recent-report">
+                          <div class="au-card-inner">
+                              <h3 class="title-2">{{list.name}}</h3>
+                              <div class="chart-info">
+                                <!-- University Tagline/One Liner Description (if any)-->
+                              </div>
+                             <!-- <div class="recent-report__chart">
+                                  <canvas id="recent-rep-chart"></canvas>
+                              </div>-->
+                              <img style="margin:2%;" class="img-responsive" src="{{list.imageUrl}}">
+                              <br><br>
+                              <div>
+                              <p>{{list.desc}}</p>
+                              </div>
+                               <div class="a-card-title">
+                                    <a (click)="details(list.id,list.imageUrl)" data-toggle="modal" data-target="#largeModal">Want Details</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+<!--                   
+                  <div class="col-lg-6 animated fadeInDown">
+                      <div class="au-card recent-report">
+                          <div class="au-card-inner">
+                              <h3 class="title-2">University of Texas</h3>
+                              <div class="chart-info">
+                              </div>
+                              <img style="margin:2%;" class="img-responsive" src="assets/images/Universities/texas.png">
+                              <br><br>
+                              <div>
+                              <p>Texas A&M opened its doors in 1876 as the state's first public institution of higher learning. Today, we stand as a research-intensive flagship university dedicated to sending Aggie leaders...</p>
+                              </div>
+                               <div class="a-card-title">
+                                   <button class="a-btn-plus"  data-toggle="modal" data-target="#staticModal">
+                                  <i class="zmdi zmdi-plus"></i>
+                              </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>    -->
+              </div>
+              
+              <!-- <div class="row">
+                 <div class="col-lg-6 wow fadeInDown">
+                      <div class="au-card recent-report">
+                          <div class="au-card-inner">
+                              <h3 class="title-2">University of Texas</h3>
+                              <div class="chart-info">
+                              </div>
+                              <img style="margin:2%;" class="img-responsive" src="assets/images/Universities/texas.png">
+                              <br><br>
+                              <div>
+                              <p>Texas A&M opened its doors in 1876 as the state's first public institution of higher learning. Today, we stand as a research-intensive flagship university dedicated to sending Aggie leaders...</p>
+                              </div>
+                               <div class="a-card-title">
+                                   <button class="a-btn-plus"  data-toggle="modal" data-target="#staticModal">
+                                  <i class="zmdi zmdi-plus"></i>
+                              </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  
+                  
+                  <div class="col-lg-6 wow fadeInDown" data-wow-delay="0.2s">
+                      <div class="au-card recent-report">
+                          <div class="au-card-inner">
+                              <h3 class="title-2">University of Arizona</h3>
+                              <div class="chart-info">
+                              </div>
+                              <img style="margin:2%;" class="img-responsive" src="assets/images/Universities/arizona.png">
+                              <br><br>
+                              <div>
+                              <p>Universities are defined by their people, and you could say the people here were born to challenge "business as usual." The University of Arizona existed before Arizona was a state.</p>
+                              </div>
+                               <div class="a-card-title">
+                                   <button class="a-btn-plus"  data-toggle="modal" data-target="#staticModal">
+                                  <i class="zmdi zmdi-plus"></i>
+                              </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div> -->
+
+          </div>
+      </div>
+  </div>
+
+</ng-template>
+
+<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+              <h3 style="text-align: center;" class="modal-title" id="largeModalLabel">{{university.name}}</h3><br>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Description</h5>
+              <p style="text-align: center;font-size:120%; ">{{university.desc}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Location</h5>
+              <p style="text-align: center;font-size:120%; ">{{university.location}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">GRE Score</h5>
+              <p style="text-align: center">{{university.GRE}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">TOEFL Score</h5>
+              <p style="text-align: center;font-size:120%;">{{university.TOEFL}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Ranking</h5>
+              <p style="text-align: center">{{university.ranking}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Top Recruiters</h5>
+              <p style="text-align: center">{{university.TopRecruiters}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Courses</h5>
+              <p style="text-align: center">{{courses}}</p>
+              
+          <div class="modal-footer">
+              <button id="closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+  <!-- END MAIN CONTENT-->

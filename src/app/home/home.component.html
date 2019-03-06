@@ -1,0 +1,550 @@
+<!-- <div *ngIf = "showPage"> -->
+<!--Header-->
+
+
+<app-header ></app-header>
+
+<!--End of Header-->
+
+	<div class="home">
+		<div class="home_background" style="background-image: url(assets/images/index_background.jpg);"></div>
+		<div class="home_content">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<h1 class="home_title text-left" style="color:#fff;">BETTER EDUCATION,<br> BETTER WORLD !</h1>
+						<div class="home_button trans_200 float-left"><a href="#">get started</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+  <div class="register">
+	<div class="container">
+		<div class="row">
+
+						<div class="col-lg-6">
+				<div class="register_timer_container">
+					<div class="register_timer_title">Your Score. Your College.</div>
+					<div class="register_timer_text">
+						<p>Predict where you'll land with your score with our Prediction Meter. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+					</div>
+					<!--<div class="timer_container">
+						<ul class="timer_list">
+							<li><div id="day" class="timer_num">00</div><div class="timer_ss">days</div></li>
+							<li><div id="hour" class="timer_num">00</div><div class="timer_ss">hours</div></li>
+							<li><div id="minute" class="timer_num">00</div><div class="timer_ss">minutes</div></li>
+							<li><div id="second" class="timer_num">00</div><div class="timer_ss">seconds</div></li>
+						</ul>
+					</div>-->
+				</div>
+			</div>
+
+			<!-- Register Form -->
+
+			<div class="col-lg-6">
+				<div class="register_form_container">
+					<div class="register_form_title">Find out your Dream College!</div>
+					<form #homeForm = "ngForm" novalidate id="register_form" class="register_form">
+						<div class="row register_row">
+							<div class="col-lg-6 register_col">
+								<input type="text" class="form_input" name ="name" [(ngModel)]="detail.Name" placeholder="Name" #name="ngModel" required>
+								<!-- <div *ngIf="name.errors?.required && name.touched" class="error ">
+									Please enter name.
+								  </div> -->
+							</div>
+							<div class="col-lg-6 register_col">
+								<input type="email" class="form_input" name ="email" [(ngModel)]="detail.Email" placeholder="Email" #email="ngModel"  required>
+								<!-- <div *ngIf="email.errors?.required && email.touched" class="error ">
+									Please enter email.
+								  </div> -->
+							</div>
+							<div class="col-lg-6 register_col">
+								<input type="tel" class="form_input" [(ngModel)]="detail.Phone" name ="query" placeholder="Phone" #phone="ngModel" required>
+								<!-- <div *ngIf="phone.errors?.required && phone.touched" class="error ">
+									Please enter phone.
+								  </div> -->
+							</div>
+							<div  class="col-lg-6 register_col">
+											<select class="form-control" name="country" [(ngModel)]="detail.Degree">
+												<option value=''>Select Degree</option>
+												<option value="MBA">MBA</option>
+												<option value="MS">MS</option>
+												<option value="MiS">MiS</option>
+											</select>
+							</div>
+							<div class="col-lg-6 register_col">
+									<select class="form-control select_style" name="score" [(ngModel)]="detail.Score"  >
+										<option value="">Select your Score</option>
+										<option value="TOEFL">TOEFL</option>
+										<option value="IELTS">IELTS</option>
+										<option value="GRE">GRE</option>
+										
+										</select>
+															</div>
+															<div class="col-lg-6 register_col">
+																	<select class="form-control select_style" name="term" [(ngModel)]="detail.Term">
+																		<option value="">Select your Term</option>
+																		<option value="fall">Fall</option>
+																		<option value="springs">Springs</option>
+													</select>
+									</div>
+									<div  class="col-lg-6 register_col">
+										<select class="form-control" name="country" [(ngModel)]="detail.Year">
+											<option value=''>Select Year</option>
+											<option value="2019">2019</option>
+											<option value="2020">2020</option>
+											<option value="2021">2021</option>
+											<option value="2022">2022</option>
+											<option value="2023">2023</option>
+											<option value="2024">2024</option>
+											<option value="2025">2025</option>
+											<option value="2026">2026</option>
+											<option value="2027">2027</option>
+											<option value="2028">2028</option>
+											<option value="2029">2029</option>
+											<option value="2030">2030</option>
+										</select>
+							</div>
+							<div class="col">
+								<button type="submit"  [disabled]="!homeForm.form.valid" (click)="submit()" class="form_button trans_200">find out now</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Register Timer -->
+
+
+		</div>
+	</div>
+</div>
+  
+  <div class="courses1">
+		<div class="courses_background1"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<a href="/plansandpricing"><h2 class="section_title text-center">Popular Plans</h2></a>
+				</div>
+			</div>
+			<div class="row courses_row1">
+
+				<!-- Course -->
+				<div class="col-lg-4 course_col1">
+					<div class="course1">
+						<div class="course_image1"><img src="assets/images/course_2.jpg" alt=""></div>
+						<div class="course_body1">
+							<div style="border-bottom:1px solid grey;" class="course_info1">
+								<h3 style="color:black">Statement of Purpose</h3>
+								<h6 style="color:black;">
+									Get your SOP drafted by our international expert writers
+									Valid for 3 months
+								</h6>
+							</div>
+						</div>
+						<div class="course_footer1 d-flex flex-row align-items-center justify-content-start">
+							<div class="course_students1"><a href="/plansandpricing"><h6 style="text-align: center">Know More</h6></a></div>
+							<div class="course_rating1 ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
+							<div style="text-color:white;" class="course_mark1 course_free1 trans_200"><p style="color:white;">₹ 4999</p></div>
+						</div>
+					</div>
+				</div>
+				<!-- Course -->
+	
+				<!-- Course -->
+				<div class="col-lg-4 course_col1">
+					<div class="course1">
+						<div class="course_image1"><img src="assets/images/course_2.jpg" alt=""></div>
+						<div class="course_body1">
+							<div style="border-bottom:1px solid grey;" class="course_info1">
+								<h3 style="color:black">Full Package for MBA</h3>
+								<h6 style="color:black;">
+									Complete guidance with document and mentorship support.
+									Valid for 6 months
+								</h6>
+								<br>
+							</div>
+						</div>
+						<div class="course_footer1 d-flex flex-row align-items-center justify-content-start">
+							<div class="course_students1"><a href="/plansandpricing"><h6 style="text-align: center">Know More</h6></a></div>
+							<div class="course_rating1 ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
+							<div class="course_mark1 course_free1 trans_200"><p style="color:white;">₹ 29999</p></div>
+						</div>
+					</div>
+				</div>
+	
+				<!-- Course -->
+				<div class="col-lg-4 course_col">
+					<div class="course1">
+						<div class="course_image1"><img src="assets/images/course_2.jpg" alt=""></div>
+						<div class="course_body1">
+							<div style="border-bottom:1px solid black;" class="course_info1">
+								<h3 style="color:black">Personalized LORs
+								</h3>
+								<h6 style="color:black;">
+									Get your LORs drafted for a professional outlook.
+									Valid for 3 months
+								</h6>
+								<br>
+							</div>
+						</div>
+						<div class="course_footer1 d-flex flex-row align-items-center justify-content-start">
+							<div class="course_students1"><a href="/plansandpricing"><h6 style="text-align: center">Know More</h6></a></div>
+							<div class="course_rating1 ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
+							<div style="text-color:white;" class="course_mark1 course_free1 trans_200"><p style="color:white;">₹ 1999</p></div>
+						</div>
+						
+					</div>
+				</div>
+				<!-- Course -->
+				
+				
+				
+	
+				<!-- Course -->
+	
+				<!-- Course -->
+				
+	
+				<!-- Course -->
+				
+	</div>
+
+	<!--Instructors-->
+
+	<div class="instructors" >
+		<div class="instructors_background" style="background-image:url(assets/images/instructors_background.png)"></div>
+		<div class="container" >
+			<div  class="row">
+				<div class="col">
+					<h2 class="section_title text-center">Top Tutors in Town</h2>
+				</div>
+			</div>
+			<div class="row instructors_row">
+
+				<!-- Instructor -->
+				<div class="col-lg-4 instructor_col">
+					<div class="instructor text-center">
+						<div class="instructor_image_container">
+							<div class="instructor_image"><img src="assets/images/instructor_1.jpg" alt=""></div>
+						</div>
+						<div class="instructor_name"><a>Dikshant Mahant</a></div>
+						<div class="instructor_title">Teacher</div>
+						<div class="instructor_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Instructor -->
+				<div class="col-lg-4 instructor_col">
+					<div class="instructor text-center">
+						<div class="instructor_image_container">
+							<div class="instructor_image"><img src="assets/images/instructor_2.jpg" alt=""></div>
+						</div>
+						<div class="instructor_name"><a>Divyanshu Mahant</a></div>
+						<div class="instructor_title">Teacher</div>
+						<div class="instructor_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Instructor -->
+				<div class="col-lg-4 instructor_col">
+					<div class="instructor text-center">
+						<div class="instructor_image_container">
+							<div class="instructor_image"><img src="assets/images/instructor_3.jpg" alt=""></div>
+						</div>
+						<div class="instructor_name"><a>Atharva Mungee</a></div>
+						<div class="instructor_title">Teacher</div>
+						<div class="instructor_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="home_button13 text-center trans_200"><a href="/mentor/login">Register as Mentor</a></div>
+		</div>
+	</div>
+
+	<div class="instructorss">
+		<div class="instructors_background" style="/*background-image:url(assets/images/instructors_background.png)*/"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h2 class="section_title text-center">Most Searched Universities</h2>
+				</div>
+			</div>
+			<div class="row instructors_row">
+				<!-- Instructor -->
+				<div class="col-lg-4 instructor_col" *ngFor="let u of unidata">
+					<div class="instructor text-center">
+						<div class="instructor_image_container">
+							<div (click)="goto(u)" class="instructor_image"><img src="{{u.imageUrl}}" alt=""></div>
+						</div>
+						<div class="instructor_name"><a>{{u.name}}</a></div>
+						<div class="instructor_title">{{u.location}}</div>
+						<div class="instructor_text">
+							<p>{{u.desc}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Events -->
+
+	<div class="events">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h2 class="section_title text-center">Upcoming Events</h2>
+				</div>
+			</div>
+			<div class="row events_row" >
+
+				<!-- Event -->
+				<div class="col-lg-4 event_col" *ngFor="let event of events">
+					<div class="event">
+						<div class="event_image"><img src="{{event.imageUrl}}" alt=""></div>
+						<div sty class="event_date d-flex flex-column align-items-center justify-content-center">
+							<div class="event_day"><h6 style="font-size: 38%;">{{event.Date}}</h6></div>
+							<div class="event_month"><h6 style="font-size: 120%;">{{event.Time}}</h6></div>
+						</div>
+						<div class="event_body d-flex flex-row align-items-center justify-content-start">
+							<div class="event_title">{{event.name}}</div>
+							<div (click)="eventclicked(event.Desc,event.name,event.Time,event.Date)" class="event_tag ml-auto"><a data-toggle="modal" data-target="#largeModal"><div style="padding:0 6%;font-size: 150%">+</div></a></div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Students Reviews -->
+
+	<div class="instructors">
+	<div class="instructors_background" style="background-image:url(assets/images/instructors_background.png)"></div>
+		<div class="container" >
+			<div class="row">
+				<div class="col">
+					<h2 class="section_title text-center">"Here it directly from Students"</h2>
+				</div>
+			</div>
+			<div class="row instructors_row">
+				<div class="col-lg-4 instructor_col">
+					<div class="instructor text-center">
+						<div class="instructor_image_container">
+							<div class="instructor_image"><img src="assets/images/demo.jpg" alt=""></div>
+						</div>
+						<div class="instructor_name"><a>Addmitted to MIT</a></div>
+						<div class="instructor_title">Student</div>
+						<div class="instructor_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Instructor -->
+				<div class="col-lg-4 instructor_col">
+					<div class="instructor text-center">
+						<div class="instructor_image_container">
+							<div class="instructor_image"><img src="assets/images/demo.jpg" alt=""></div>
+						</div>
+						<div class="instructor_name"><a>Admitted to Standford</a></div>
+						<div class="instructor_title">Student</div>
+						<div class="instructor_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Instructor -->
+				<div class="col-lg-4 instructor_col">
+					<div class="instructor text-center">
+						<div class="instructor_image_container">
+							<div class="instructor_image"><img src="assets/images/demo.jpg" alt=""></div>
+						</div>
+						<div class="instructor_name"><a>Admitted to IIT</a></div>
+						<div class="instructor_title">Student</div>
+						<div class="instructor_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="home_button13 text-center trans_200"><a href="/student/login">Register as Student</a></div>
+		</div>
+	</div>
+
+	<!-- University -->
+
+		<div  class="container text-center my-3">
+    <h3 style="margin-top:15%; ">Universities from which our students get admit from</h3>
+    <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+        <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item row no-gutters active">
+                <div class="col-3 float-left"><img class="img-fluid imsize"  src="assets/images/Universities/7d028768b029c476d6fa41b7548572ff.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid imsize" src="assets/images/Universities/50cdd8990ffbb92fb086ff6364747180.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid imsize"  src="assets/images/Universities/220px-University_of_Calgary_Logo.svg.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid imsize"  src="assets/images/Universities/220px-Texas_A&M_University_seal.svg.png"></div>
+            </div>
+            <div class="carousel-item row no-gutters">
+                <div class="col-3 float-left"><img class="img-fluid imsize"  src="assets/images/Universities/439cb48533af81dd261899f9cc9f512b.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid imsize" src="assets/images/Universities/logo-monash.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid imsize"  src="assets/images/Universities/'.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid imsize"  src="assets/images/Universities/580b585b2edbce24c47b2cc9.png"></div>
+            </div>
+                        <div class="carousel-item row no-gutters ">
+                <div class="col-3 float-left"><img class="img-fluid imsize"  src="assets/images/Universities/1200px-Eastern_Illinois_University_seal.svg.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid imsize"   src="assets/images/Universities/1200px-Georgia_Tech_seal.svg.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid imsize" src="assets/images/Universities/1200px-Logo_der_Technischen_Universität_Berlin.svg.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid imsize"  src="assets/images/Universities/1200px-Logo_TU_Chemnitz.svg.png"></div>
+            </div>
+        </div>
+        <a  class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+	<!-- Blog -->
+
+	<div class="blog" >
+		<div class="container">
+			<div class="row row-lg-eq-height">
+
+				<!-- Blog Left -->
+										<div class="blog_categories">
+							<div class="row categories_row" >
+
+								<!-- Category -->
+								<div class="col-md-2 blog_category_col" style="text-align: center;">
+									
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_1.jpg" alt=""></div>
+											<div class="blog_category_title"><span class="count">2000</span>+</div>
+											
+										</div>
+									<span class="count_des" >Registered Students</span>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-2 blog_category_col"style="text-align: center;">
+									
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_4.jpg" alt=""></div>
+											<div class="blog_category_title"><span class="count">200</span>+</div>
+										</div>
+									<span class="count_des">Mentoring Call</span>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-2 blog_category_col"style="text-align: center;">
+									
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_1.jpg" alt=""></div>
+											<div class="blog_category_title"><span class="count">90</span></div>
+										</div>
+									<span class="count_des">Acceptance Rate of Univeristy(%)</span>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-2 blog_category_col"style="text-align: center;">
+									
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_4.jpg" alt=""></div>
+											<div class="blog_category_title"><span class="count">30</span></div>
+										</div>
+									<span class="count_des">Number of countries we have mentors from</span>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-2 blog_category_col"style="text-align: center;">
+									
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_1.jpg" alt=""></div>
+											<div class="blog_category_title"><span class="count">100</span></div>
+										</div>
+									<span class="count_des" >Positive recommdations(%)</span>
+								</div>
+
+								<!-- Category -->
+								<div class="col-md-2 blog_category_col"style="text-align: center;">
+									
+										<div class="blog_category">
+											<div class="blog_category_image"><img src="assets/images/blog_4.jpg" alt=""></div>
+											<div class="blog_category_title"><span class="count">450</span>+</div>
+										</div>
+									<span class="count_des">Number of students mentored</span>
+								</div>
+
+							</div>
+						</div>
+	
+			</div>
+		</div>
+	</div>
+	<!-- Brands -->
+
+		<div class="container" style="margin-left: 5%; margin-top: 5%; margin-bottom: 5%; text-align: center;">
+			<h4 class="phead" style="font-family: 'Poppins', sans-serif;"> Our Partners in making your future better.</h4>
+			<div class="row" style="text-align: center;" >
+									
+							<div style="text-align: center;" class="col-xs-3 justify-content-center">	<img class="p1" src="assets/images/Patner/p1.jpg" alt=""></div>
+							<div style="text-align: center;" class="col-xs-3 justify-content-center">	<img class="p2" src="assets/images/Patner/p3.png" alt=""></div>
+							<div style="text-align: center;" class="col-xs-3 justify-content-center">	<img class="p3" src="assets/images/Patner/p4.png" alt=""></div>
+						
+						
+
+					
+				</div>
+			</div>
+		</div>
+	
+<!--Footer-->
+	<app-footer ></app-footer>
+	<div style="margin-top:13%;" class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+					<h3 style="text-align: center;" class="modal-title" id="largeModalLabel">{{Name}}</h3>
+					<div class="modal-body" id="largeModalLabel">
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Description</h5>
+					<p style="text-align: center;font-size:120%; ">{{desc}}</p>
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Date</h5>
+					<p style="text-align: center">{{date}}</p>
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Time</h5>
+					<p style="text-align: center;font-size:120%; ">{{time}}</p>
+					<div style="text-align: center;"><input name="email" [(ngModel)]="eemail" type="email">
+					<button style="text-align: center;" (click)="register()">Register</button></div>
+				</div>
+				<div class="modal-footer">
+					<button id="closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--End Of Footer-->
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="js/custom.js"></script>
+<!-- </div> -->
+
+	

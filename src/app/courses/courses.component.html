@@ -1,0 +1,136 @@
+<!--Header-->
+
+
+<app-header ></app-header>
+<!--End of Header-->
+
+
+
+
+<!-- Language -->
+
+<!--<div class="language">-->
+  <div class="container-fluid">
+    <div class="row heading" >
+      <div class="col">
+        <div class="language_title">List Of Universities</div>
+      </div>
+    </div>      <!--<div  class="col-lg-6" >
+        <div class="form-group">
+            <div style="padding:0 4%" class="owl-item language_item">
+                <div class="lang_name">
+                  <input style="text-align: center;" type="text" placeholder="search your college name" name="search" [(ngModel)]="searchbar">
+                      <button class="btn btn-primary" (click)="search()">search</button>
+                    <div style="font-size:150%;" class="rs-select2--light rs-select2--lg">
+                        <select class="form-control" (click)="selectedcount($event)" [(ngModel)]="selectedcountry" class="js-select2" name="fees">
+                           <option value="">Select Your Country of Choice</option>
+                            <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+                        </select>
+                    </div>
+                    <div style="font-size:150%;" class="rs-select2--light rs-select2--lg">
+                      <select (click)="selectedcour($event)" [(ngModel)]="selectedcourse" class="js-select2" name="fees">
+                         <option value="">Select Your Course of Your Choice</option>
+                          <option *ngFor="let course of courses" value="{{course}}">{{course}}</option>
+                      </select>
+                      <button (click)="apply()" style="background: rgb(0,172,172);font-size: 100%">Apply</button>
+                      <button (click)="reset()" style="background: rgb(0,172,172);font-size: 100%">Reset</button>
+                      <br><br>
+                  </div>
+                </div>
+            </div>
+      </div>
+    </div>-->
+
+    <div class="row" style="margin-top: 5%; text-align: center;">
+      <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+    <div class="input-group">
+  <input name="search" [(ngModel)]="searchbar" type="text" class="form-control" placeholder="Search your College Name">
+      <div style="margin-left: 2%;" class="input-group-btn">
+        <button (click)="search()" class="btn btn-search" type="button"><i class="fa fa-search fa-fw"></i> Search</button>
+      </div>
+</div>
+</div>
+  <div class="col-lg-4"></div>
+
+
+  </div>
+  <div class="row" style="margin-top: 3%;">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-3">
+<div style="padding-top: 5%;" class="input-group">
+  <select name="course" [(ngModel)]="selectedcourse" style=" width:100%;" class="custom-select" id="inputGroupSelect04">
+    <option value="" selected>Select Your Course of Your Choice</option>
+    <option  *ngFor="let course of courses" value="{{course}}">{{course}}</option>
+  </select>
+  </div>
+    </div>
+
+        <div class="col-lg-3">
+  <div style="padding-top: 5%;" class="input-group">
+      <select name="country" [(ngModel)]="selectedcountry" style=" width: 100%;" class="custom-select" id="inputGroupSelect04">
+    <option  value="" selected>Select Your Country of Choice</option>
+   <option name="country" *ngFor="let country of countries" value="{{country}}">{{country}}</option>
+  </select>
+  </div>
+    </div>
+    <!--<div style="padding-top: 1%;" class="col-lg-2"><button class="btn btn-outline-info" type="button">Apply</button><button style="margin-left: 5%;" class="btn btn-outline-danger" type="button">Reset</button></div>-->
+  </div>
+  <div class="row" style="margin-top: 1%; text-align: center;">
+<div class="col">
+  <button style="width: 100px;" class="btn btn-outline-info" type="button" (click)="apply()">Apply</button><button style="margin-left: 1%; width: 100px;" class="btn btn-outline-danger" type="button" (click)="reset()">Reset</button>
+</div>
+  </div>
+
+</div>
+<!-- Courses -->
+
+<div class="courses1">
+  <div class="container">
+    <div class="row courses_row1">
+
+      <!-- Course -->
+      <div *ngFor = "let list of finaldata"class="col-lg-4 course_col">
+        <div class="course1">
+          <div class="course_image1"><img src="{{list.imageUrl}}" alt=""></div>
+          <div class="course_body1">
+            <div class="course_title1"><a (click)="knowmore(list.id,list.imageUrl)">{{list.name}}</a></div>
+            <div class="course_info1">
+              <ul>
+                <li><a href="#">{{list.location}}</a></li>
+                <li><a>{{list.ranking}}</a></li>
+              </ul>
+            </div>
+            <div class="course_text1">
+              <p>{{list.desc}}</p>
+            </div>
+          </div>
+          <div class="course_footer1 d-flex flex-row align-items-center justify-content-start">
+            <div class="course_students1"><i class="fa fa-user" aria-hidden="true"></i><span>10</span></div>
+            <div class="course_rating1 ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
+            <div style="color: white" class="course_mark1 course_free1 trans_200"><a (click)="knowmore(list.id,list.imageUrl)">Know More..</a></div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <!-- Course -->
+  
+
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <!-- <div class="load_more_button"><a href="#">load more</a></div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!--Footer-->
+  <app-footer ></app-footer>
+  <!--End Of Footer-->

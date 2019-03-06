@@ -1,0 +1,39 @@
+ <!-- MAIN CONTENT-->
+ <div style="margin-top:4em;" class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+           
+           
+    <div class="row">
+       <div class="col-md-12">
+           <div class="row">
+                
+                <div *ngFor= "let mentor of mentors"class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title mb-3">Mentor</strong>
+                        </div>
+                        <div  class="card-body">
+                            <div class="mx-auto d-block">
+                                <img class="rounded-circle mx-auto d-block" src="{{mentor.m_profilepic}}" alt="Card image cap"><br>
+                                <h5 class="text-sm-center mt-2 mb-1">{{mentor.m_name}}</h5>
+                            </div>
+                            <hr>
+                            <div class="card-text text-sm-center">
+                                <div class="card-text text-sm-center">
+                                    <a href="https://glacial-citadel-47306.herokuapp.com/call?from={{mentor.S_id}}&to={{mentor.mentorId}}"><button class="btn btn-primary">Call Mentor</button></a>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Profile Section End-->
+               
+ 
+               
+               
+            </div><!-- Row End -->
+           
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+
+<!-- Blog Image -->
+
+<div class="blog_top_image">
+  <div class="blog_top">
+    <img data-parallax="scroll" data-speed="0.8" class="blog_background parallax-window" src="{{universityData?.imageUrl}}">
+  </div>
+</div>
+
+<!-- Blog Content -->
+
+<div class="blog_container">
+  <div class="container">
+    <div class="row blog_content_row">
+      <div class="col">
+        <div class="blog_content">
+          <div class="blog_post_title_container">
+            <div class="blog_category"><a href="#">{{universityData?.location}}</a></div>
+            <div class="blog_title">{{universityData?.name}}</div>
+          </div><br><br>
+          <div style="display: flex" class="blog_details">
+            <h4 style="padding-right:2%;">Ranking:</h4>
+            <h4>{{universityData?.ranking}}</h4>
+          </div>
+          <br>
+          <div style="display: flex" class="blog_details">
+              <h4 style="padding-right:2%;">TopRecruiters:</h4>
+              <h4>{{universityData?.TopRecruiters}}</h4>
+          </div>
+          <br>
+          <div style="display: flex" class="blog_details">
+            <h4 style="padding-right:2%">Courses:</h4>
+              <div *ngFor="let course of universityData?.courses">
+                <h4>{{course}},</h4>
+              </div>
+          </div><br>
+          <div style="display: flex" class="blog_details">
+              <h4 style="padding-right:2%;">TuitionFee:</h4>
+              <h4>{{universityData?.TuitionFee}}</h4>
+          </div><br>
+
+          <div style="display: flex" class="blog_details">
+            <h4 style="padding-right:2%;">GRE-Score:</h4>
+            <h4>{{universityData?.GRE}}</h4>
+        </div>
+
+        <div style="display: flex" class="blog_details">
+          <h4 style="padding-right:2%;">TOEFL-Score:</h4>
+          <h4>{{universityData?.TOEFL}}</h4>
+      </div><br>
+          
+          <div class="blog_text">
+            <p>{{universityData?.desc}}</p>
+            <figure class="blog_post_image">
+              
+              <!-- <figcaption>Lorem Ipsum Dolor Sit Amet</figcaption> -->
+            </figure>
+            <!-- <p>I can’t argue for the virtues of the Flamin’ Hot Cheetos: None exist. They’re amoral and fundamentally neutral, no more capable of assuaging my grief than the empty husk of “thoughts and prayers.” But not everything requires meaning — not everything needs to be something else. When I tuck away a bag of Flamin’ Hot Cheetos, I do it because I like them, because they’re nothing more than what they reveal themselves to be. That’s enough.</p> -->
+          </div>
+          <!-- <div class="blog_tags">
+            <ul>
+              <li><a href="#">Manual</a></li>
+              <li><a href="#">Liberty</a></li>
+              <li><a href="#">Interpretation</a></li>
+              <li><a href="#">Recommendations</a></li>
+            </ul>
+          </div> -->
+          <!-- <div class="blog_post_footer d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+            <div class="blog_post_author d-flex flex-row align-items-center justify-content-start">
+              <div class="author_image"><div><img src="{{list?.imageUrl}}" alt=""></div></div>
+              <div class="author_info">
+                <ul>
+                  <li><a href="#">Sarah Parker</a></li>
+                  <li>Sep 29, 2017 at 9:48 am</li>
+                </ul>
+              </div>
+            </div>
+            <div class="blog_post_share ml-lg-auto">
+              <span>share</span>
+              <ul>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Similar Posts -->
+
+
+  </div>
+</div>

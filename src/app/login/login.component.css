@@ -1,0 +1,86 @@
+@import url('/assets/fonts/material-icon/css/material-design-iconic-font.min.css');
+@import url('/assets/css/style.css');
+
+
+.social-login1{
+    padding-top:15px;
+    display:flex;
+}
+
+ /* .signup {
+    margin-bottom: 150px;
+}
+.signup-content {
+    @extend display-flex;
+    padding: 75px 0;
+}
+.signup-form, .signup-image, .signin-form, .signin-image{
+    width: 50%;
+    overflow: hidden;
+}
+.signup-image {
+    margin: 0 55px;
+}
+.form-title {
+    margin-bottom: 33px;
+}
+.signup-image {
+    margin-top: 45px;
+}
+figure {
+    margin-bottom: 50px;
+    text-align: center;
+}
+.form-submit {
+    display: inline-block;
+    background: 0000ff;
+    color: #fff;
+    border-bottom: none;
+    width: auto;
+    padding: 15px 39px;
+    @include border-radius(15px);
+    margin-top: 25px;
+    cursor: pointer;
+ 
+}
+
+#signin {
+    margin-top: 16px;
+}
+.signup-image-link {
+    font-size: 14px;
+    color: #000000;
+    display: block;
+    text-align: center;
+}
+
+.term-service {
+    font-size: 13px;
+    color: #000000;
+}
+.signup-form {
+    margin-left: 75px;
+    margin-right: 75px;
+    padding-left: 34px;
+}
+.register-form {
+    width: 100%;
+}
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden;
+  
+}
+
+input {
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid ;
+    padding: 6px 30px;
+    font-family: Poppins;
+    box-sizing: border-box;
+    @include input-placeholder($grey-light);
+  
+} */

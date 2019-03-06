@@ -1,0 +1,402 @@
+
+    <!-- Modal Section - Works on click of + Button on Universities Cards -->
+    <!-- modal static 
+			<div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true"
+			 data-backdrop="static">
+				<div class="modal-dialog modal-sm" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="staticModalLabel">Static Modal</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>
+								This is a static modal, backdrop click will not close it.
+							</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Confirm</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		 end modal static -->
+    
+    
+    <div class="page-wrapper">
+        
+        <!-- HEADER MOBILE-->
+        <div style="position: fixed;height: 50px;width: 100%;background-color: white;z-index: 100" class="  d-lg-none">
+        <header  class="header-mobile" >
+                  <div class="hamburger menu_mm">
+                    <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+                  </div>
+               
+    <div  class="menu d-flex flex-column text-center menu_mm trans_400">
+        <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+                         <div  class="image">
+                                             <a style="color: black;" class="js-acc-btn" href="#">Hello {{username}}</a>
+                        </div>                     
+        
+        <nav class="menu_nav" >
+           <ul *ngIf= "isStudent ==  'student'" class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a [routerLink]="['university']" [routerLinkActive]="'is-active'">
+                                <i style="margin-right: 8px;" class="fas fa-chart-bar"></i>University Shortlisting</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['profile']" [routerLinkActive]="'is-active'">
+                                <i style="margin-right: 8px;"class="fas fa-table"></i>Profile Evaluation</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['mentor']" [routerLinkActive]="'is-active'">
+                                <i style="margin-right: 8px;"class="fas fa-table"></i>Mentor</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['sopresumelor']" [routerLinkActive]="'is-active'">
+                                <i style="margin-right: 8px;"class="far fa-check-square"></i>SOP, LOR and Resume</a>
+                            </li>
+                        <li>
+                            <a href="sample.html"[routerLink]="['mock-visa']" [routerLinkActive]="'is-active'">
+                                <i style="margin-right: 8px;"class="fas fa-map-marker-alt"></i>Mock Visa Interview Help</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['accomodation']" [routerLinkActive]="'is-active'">
+                                <i style="margin-right: 8px;"class="fas fa-map-marker-alt"></i>Accomodation Help</a>
+                        </li>
+                         <li>
+                            <a [routerLink]="['loan']" [routerLinkActive]="'is-active'">
+                                <i style="margin-right: 8px;"class="fas fa-map-marker-alt"></i>Loan Help</a>
+                        </li>
+                         <li>
+                            <a [routerLink]="['air-travel']" [routerLinkActive]="'is-active'">
+                                <i style="margin-right: 8px;"class="fas fa-map-marker-alt"></i>Air Travel Help</a>
+                        </li>
+                         <li>
+                            <a [routerLink]="['forex']" [routerLinkActive]="'is-active'">
+                                <i style="margin-right: 8px;"class="fas fa-map-marker-alt"></i>Forex Help</a>
+                        </li>
+                        <li>
+                                <a [routerLink]="['appointmentbooked']" [routerLinkActive]="'is-active'">
+                                    <i style="margin-right: 8px;"class="fas fa-table"></i>Student</a>
+                            </li>
+                            <li>
+                                <a href="/dashboard/appointmentbooked">
+                                    <i style="margin-right: 8px;"class="fas fa-table"></i>Bookings With Mentors</a>
+                            </li>
+                    </ul>
+                    <ul *ngIf= "isStudent ==  'mentor'" class="list-unstyled navbar__list">
+                            <li>
+                                <a [routerLink]="['profile']" [routerLinkActive]="'is-active'">
+                                    <i class="fas fa-chart-bar"></i>Profile</a>
+                            </li>
+                            <li>
+                                <a href="/dashboard/appointmentbookedmentor">
+                                    <i class="fas fa-table"></i>AppointmentsRecevied</a>
+                            </li>
+                            </ul>
+        </nav>
+                    <div class="content" style="color: black;font-weight: 700;">
+                    <a (click)="logout()"><i class="zmdi zmdi-power" (click)="logout()"></i>Logout</a>
+                    </div>
+        <div class="menu_extra">
+            <div class="menu_phone"><span class="menu_title">phone:</span>+91 1234567890</div>
+        </div>
+    </div>
+        </header>
+        </div>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="assets/images/icon/logo.png" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul *ngIf= "isStudent ==  'student'" class="list-unstyled navbar__list">
+                        <li>
+                            <a [routerLink]="['university']" [routerLinkActive]="'is-active'">
+                                <i class="fas fa-chart-bar"></i>University Shortlisting</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['profile']" [routerLinkActive]="'is-active'">
+                                <i class="fas fa-table"></i>Profile Evaluation</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['mentor']" [routerLinkActive]="'is-active'">
+                                <i class="fas fa-table"></i>Mentor</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['sopresumelor']" [routerLinkActive]="'is-active'">
+                                <i class="far fa-check-square"></i>SOP, LOR and Resume</a>
+                        </li>
+                      
+                        <li>
+                            <a [routerLink]="['mock-visa']" [routerLinkActive]="'is-active'">
+                                <i class="fas fa-map-marker-alt"></i>Mock Visa Interview Help</a>
+                        </li>
+                          <li>
+                            <a [routerLink]="['accomodation']" [routerLinkActive]="'is-active'">
+                                <i class="fas fa-home"></i>Accomodation Help</a>
+                        </li>
+                          <li>
+                            <a [routerLink]="['loan']" [routerLinkActive]="'is-active'">
+                                <i class="fas fa-inr"></i>Loan Help</a>
+                        </li>
+                          <li>
+                            <a [routerLink]="['air-travel']" [routerLinkActive]="'is-active'">
+                                <i class="fas fa-plane"></i>Air Travel Help</a>
+                        </li>
+                          <li>
+                            <a [routerLink]="['forex']" [routerLinkActive]="'is-active'">
+                                <i class="fas fa-usd"></i>FOREX Help</a>
+                        </li>
+                        <li>
+                            <a href="/dashboard/appointmentbooked">
+                                <i class="fas fa-table"></i>Bookings With Mentors</a>
+                        </li>
+
+                        
+                        
+                    </ul>
+                    <ul *ngIf= "isStudent ==  'mentor'" class="list-unstyled navbar__list">
+                            <li>
+                                <a [routerLink]="['profile']" [routerLinkActive]="'is-active'">
+                                    <i class="fas fa-chart-bar"></i>Profile</a>
+                            </li>
+                            <li>
+                                <a href="/dashboard/appointmentbookedmentor">
+                                    <i class="fas fa-table"></i>AppointmentsRecevied</a>
+                            </li>
+                            </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop d-none d-sm-block">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <div style="margin-left:80%" class="header-button">
+                                    <div class="account-item ">
+                                             <div class="content">
+                                            <a  href="#">Hello {{username}}</a>
+                                            <a  (click)="logout()">
+                                                    <i style="padding-right: 2px; padding-left: 6px;" class="zmdi zmdi-power" (click)="logout()"></i>Logout</a>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <!-- <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="overview-wrap">
+                                    <h2 class="title-1">overview</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                             
+                                <div class="table-data__tool">
+                                    <div class="table-data__tool-left">
+                                        <div class="rs-select2--light rs-select2--md">
+                                            <select class="js-select2" name="country">
+                                                <option selected="selected">United States</option>
+                                                <option value="">Canada</option>
+                                                <option value="">Netherlands</option>
+                                                <option value="">Japan</option>
+                                                <option value="">Singapore</option>
+                                                <option value="">Sweden</option>
+                                                <option value="">Germany</option>
+                                                <option value="">France</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                        <div class="rs-select2--light rs-select2--md">
+                                            <select class="js-select2" name="course">
+                                                <option selected="selected">Arts and Media</option>
+                                                <option value="">Aerospace Engineering</option>
+                                                <option value="">Biological Engineering</option>
+                                                <option value="">Civil/Construction/Structural</option>
+                                                <option value="">Computer Science</option>
+                                                <option value="">Electrical Engineering</option>
+                                                <option value="">Engineering Management</option>
+                                                <option value="">Environmental Engineering</option>
+                                                <option value="">Industrial Engineering</option>
+                                                <option value="">Management Information</option>
+                                                <option value="">Material Science</option>
+                                                <option value="">Mechanical Engineering</option>
+                                                <option value="">Data Mining</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                        <div class="rs-select2--light rs-select2--lg">
+                                            <select class="js-select2" name="course">
+                                                <option selected="selected">Average GRE</option>
+                                                <option value="">> 320</option>
+                                                <option value="">> 310</option>
+                                                <option value="">> 305</option>
+                                                <option value="">> 300</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                        <div class="rs-select2--light rs-select2--md">
+                                            <select class="js-select2" name="course">
+                                                <option selected="selected">Top 50</option>
+                                                <option value="">Top 100</option>
+                                                <option value="">All</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+                                      
+                                                
+                                    </div>
+                                    <p style="margin-top:1%;font-size:16px;">$ <span id="demo"></span></p>
+                                    <div class="table-data__tool-right">
+                                        <div class="slidecontainer rs-select2--light">
+                                            <p>Annual Tution Fee </p>
+                                        <input type="range" min="1000" max="1000000" value="500000" class="slider" id="myRange">
+                                        </div> 
+                                    </div>
+                                </div>
+                                                           </div>
+                        </div>
+                                   
+                       
+                        
+                        <div class="row">
+                            <div class="col-lg-6 animated fadeInDown">
+                                <div class="au-card recent-report">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2">University of Arizona</h3>
+                                        <div class="chart-info">
+                                        
+                                        </div>
+                                     
+                                        <img style="margin:2%;" class="img-responsive" src="images/Universities/arizona.png">
+                                        <br><br>
+                                        <div>
+                                        <p>Universities are defined by their people, and you could say the people here were born to challenge "business as usual." The University of Arizona existed before Arizona was a state.</p>
+                                        </div>
+                                         <div class="a-card-title">
+                                             <button class="a-btn-plus"  data-toggle="modal" data-target="#staticModal">
+                                            <i class="zmdi zmdi-plus"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-6 animated fadeInDown">
+                                <div class="au-card recent-report">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2">University of Texas</h3>
+                                        <div class="chart-info">
+                                      
+                                        </div>
+                                       
+                                        <img style="margin:2%;" class="img-responsive" src="images/Universities/texas.png">
+                                        <br><br>
+                                        <div>
+                                        <p>Texas A&M opened its doors in 1876 as the state's first public institution of higher learning. Today, we stand as a research-intensive flagship university dedicated to sending Aggie leaders...</p>
+                                        </div>
+                                         <div class="a-card-title">
+                                             <button class="a-btn-plus"  data-toggle="modal" data-target="#staticModal">
+                                            <i class="zmdi zmdi-plus"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                        
+                        <div class="row">
+                           <div class="col-lg-6 wow fadeInDown">
+                                <div class="au-card recent-report">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2">University of Texas</h3>
+                                        <div class="chart-info">
+                                       
+                                        </div>
+                                       
+                                        <img style="margin:2%;" class="img-responsive" src="images/Universities/texas.png">
+                                        <br><br>
+                                        <div>
+                                        <p>Texas A&M opened its doors in 1876 as the state's first public institution of higher learning. Today, we stand as a research-intensive flagship university dedicated to sending Aggie leaders...</p>
+                                        </div>
+                                         <div class="a-card-title">
+                                             <button class="a-btn-plus"  data-toggle="modal" data-target="#staticModal">
+                                            <i class="zmdi zmdi-plus"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="col-lg-6 wow fadeInDown" data-wow-delay="0.2s">
+                                <div class="au-card recent-report">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2">University of Arizona</h3>
+                                        <div class="chart-info">
+                                         
+                                        </div>
+                                       
+                                        <img style="margin:2%;" class="img-responsive" src="images/Universities/arizona.png">
+                                        <br><br>
+                                        <div>
+                                        <p>Universities are defined by their people, and you could say the people here were born to challenge "business as usual." The University of Arizona existed before Arizona was a state.</p>
+                                        </div>
+                                         <div class="a-card-title">
+                                             <button class="a-btn-plus"  data-toggle="modal" data-target="#staticModal">
+                                            <i class="zmdi zmdi-plus"></i>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © 2018 Foriegn Admits<br>All rights reserved.  Designed By <a href="http://ankitchoudhary.co.in"> Clustroit Dynamics</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+            <router-outlet></router-outlet>
+
+
+        </div>
+
+    </div>
+    
+   

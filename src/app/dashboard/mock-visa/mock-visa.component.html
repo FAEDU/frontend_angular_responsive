@@ -1,0 +1,89 @@
+<!-- MAIN CONTENT-->
+<div style="margin-top:4em;" class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+      
+      
+        <div class="row">
+           <div class="col-md-12">
+               <div class="row">
+                    
+      
+                                <div class="chart-info">
+                                  <!-- University Tagline/One Liner Description (if any)-->
+                                </div>
+                                <div *ngFor="let list of mockvisaData" class="col-md-4 mockcard">
+                                  <div  class="card-body bg-light" >
+                                      <div class="mx-auto d-block"  style="margin:2%;">
+                                          <img class="rounded-circle mx-auto d-block" src="{{list.imageUrl}}" alt="Card image cap"><br>
+                                          <h4 class="text-sm-center mt-2 mb-1">{{list.name}}</h4>
+      
+                                          <div class="location text-sm-center">
+                                            <h5>{{list.desc}}</h5>
+                                          </div>
+                                          <div class="location text-sm-center">
+                                              <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;{{list.location}}
+                                          </div>
+                                          <div class="location text-sm-center">
+                                              <i class="fa fa-star" aria-hidden="true"></i> &nbsp;Rating - {{list.rating}}
+                                          </div>
+                                          <div class="location text-sm-center">
+                                              <i class="fa fa-star" aria-hidden="true"></i> &nbsp;Student Served - {{list.Servered}}
+                                          </div>
+                                      </div>
+      
+                                      <div class="card-text text-sm-center">
+                                        <button class="btn btn-primary"(click)="setID(list.name)" data-toggle="modal" data-target="#largeModal">Select</button>
+                                      </div>
+                                  </div>
+                                      <hr>
+                                    </div>
+      
+                              </div>
+                                  <hr>
+                                  </div>
+      
+                </div>
+      
+                
+            </div>
+        </div>
+      </div>
+      <!-- END MAIN CONTENT-->
+      
+      <!-- modal large -->
+      <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" >
+              <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="largeModalLabel"></h5><!-- Card Heading-->
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <!-- Edit Form from here-->
+                          <div class="col-lg-12"><!--Apply Match Parent Width-->
+                                  <div class="card-body card-block">
+                                     
+                                      <div class="has-warning form-group">
+                                              <label for="inputIsInvalid" class=" form-control-label">Phone Number</label>
+                                              <input type="text" id="inputIsInvalid" [(ngModel)]="modal.contactNumber" class="is-invalid form-control">
+                                          </div>
+                                          <div class="has-warning form-group">
+                                                  <label for="inputIsInvalid" class=" form-control-label">Location (approx)</label>
+                                                  <input type="text" id="inputIsInvalid" class="is-invalid form-control"  [(ngModel)]= "modal.Location">
+                                              </div>
+                                  </div>
+                          </div>
+                          <!--Form Section Ending-->
+                      </div>
+                      <div class="modal-footer">
+                          <button id= "closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                          <button type="button" (click)="submit()" class="btn btn-primary">Confirm</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end modal large -->
+      

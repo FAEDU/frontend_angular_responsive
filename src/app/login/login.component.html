@@ -1,0 +1,108 @@
+<div *ngIf="mentor;else elseblock">
+    <div *ngIf= "showPage">
+        <div class="main login" style="padding:10% 0px;">
+          <!-- Sing in  Form -->
+                  <section class="sign-in">
+                      <div class="container">
+                          <div class="signin-content">
+                              <div class="signin-image">
+                                  <figure><img src="assets/images/signin-image.jpg" alt="sign up image"></figure>
+                                  <a href="#" (click)="signUp();false" class="signup-image-link">Create an account</a>
+                              </div>
+          
+                              <div class="signin-form">
+                                  <h2 class="form-title">Sign In</h2>
+                                  <form #loginForm = "ngForm" novalidate class="register-form" id="login-form">
+                                      <div class="form-group">
+                                          <label for="your_name">  <i class="fa fa-user"></i></label>
+                                        
+                                          <input type="text" name="your_name" [(ngModel)]="details.email" id="your_name" required placeholder="Your Email" #email = "ngModel" required/>
+                                          <div *ngIf="email.errors?.required && email.touched" class="error ">
+                                            Please enter email.
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="your_pass"> <i class="fa fa-lock"></i></label>
+                                          <input type="password" [(ngModel)]="details.password" required name="your_pass" id="your_pass" placeholder="Password" #password = "ngModel" required/>
+                                          <div *ngIf="password.errors?.required && password.touched" class="error ">
+                                            Please enter password.
+                                          </div><br>
+                                      </div>
+                                      <div (click)="reset()" style="cursor: pointer;" class="form-group">
+                                        Forgot Password
+                                    </div>
+                                      <div class="form-group">
+                                          <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                          <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                                      </div>
+                                      <div class="form-group form-button">
+                                      <!-- <a href='Dashboard.html'><input name="signin" id="signin" class="form-submit" style="border-radius:30px;" value="Log in"/></a> -->
+                                      <button type ="submit"  class="form-submit" [disabled]="!loginForm.form.valid" (click)="submit()">Log In</button>
+                                      </div>
+                                  </form>
+                                  <div class="social-login1">
+                                      <span class="social-label"><p style="font:bold;">Login With</p></span>
+                                      <ul class="socials">
+                                          <li><a href="https://secret-atoll-46665.herokuapp.com/google/login"><img src="assets/images/google-icon.png" height="1%" width="20%"></a></li>
+                                      </ul>
+                                  </div><br><br>
+                                  <a style="text-align:left;" href="/home"><p style="color:black;">Or go to home</p></a>
+                              </div>
+                          </div>
+                      </div>
+                  </section>
+              </div>
+            </div>
+</div>
+<ng-template #elseblock>
+<div *ngIf= "showPage">
+<div class="main login" style="padding:10% 0px;">
+  <!-- Sing in  Form -->
+          <section class="sign-in">
+              <div class="container">
+                  <div class="signin-content">
+                      <div class="signin-image">
+                          <figure><img src="assets/images/signin-image.jpg" alt="sing up image"></figure>
+                          <a href="#" (click)="signUp();false" class="signup-image-link">Create an account</a>
+                      </div>
+  
+                      <div class="signin-form">
+                          <h2 class="form-title">Sign In</h2>
+                          <form #loginForm = "ngForm" novalidate class="register-form" id="login-form">
+                              <div class="form-group">
+                                  <label for="your_name">  <i class="fa fa-user"></i></label>
+                                
+                                  <input type="text" name="your_name" [(ngModel)]="details.email" id="your_name" required placeholder="Your Email" #email = "ngModel" required/>
+                                  <div *ngIf="email.errors?.required && email.touched" class="error ">
+                                    Please enter email.
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="your_pass"> <i class="fa fa-lock"></i></label>
+                                  <input type="password" [(ngModel)]="details.password" required name="your_pass" id="your_pass" placeholder="Password" #password = "ngModel" required/>
+                                  <div *ngIf="password.errors?.required && password.touched" class="error ">
+                                    Please enter password.
+                                  </div><br>
+                              </div>
+                              <div (click)="reset()" style="cursor: pointer;" class="form-group">
+                                Forgot Password
+                            </div>
+                              <div class="form-group">
+                                  <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                  <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                              </div>
+                              <div class="form-group form-button">
+                              <!-- <a href='Dashboard.html'><input name="signin" id="signin" class="form-submit" style="border-radius:30px;" value="Log in"/></a> -->
+                              <button type ="submit"  class="form-submit" [disabled]="!loginForm.form.valid" (click)="submit()">Log In</button>
+                              </div>
+                          </form>
+                          <br><br>
+                          <a style="text-align:left;" href="/home"><p style="color:black;">Or go to home</p></a>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </div>
+    </div>
+</ng-template>
+  

@@ -1,0 +1,18 @@
+
+ <div class="super_container">
+ <!--  <app-header ></app-header>-->
+  <router-outlet>
+    <span [hidden]="!showLoader" class="loading"></span>
+  </router-outlet>
+  <!-- <app-home></app-home> -->
+  <!--<app-footer ></app-footer> -->
+  
+</div>
+
+<!-- 
+<app-header *ngIf="!isLoggedIn && showHeaderFooter" ></app-header>
+  <router-outlet>
+    <span [hidden]="!showLoader" class="loading"></span>
+  </router-outlet>
+ 
+  <app-footer *ngIf="!isLoggedIn && showHeaderFooter"></app-footer> -->

@@ -1,0 +1,56 @@
+<!--Header-->
+
+
+<app-header ></app-header>
+<!--End of Header-->
+
+<div class="super_container">
+
+
+
+	<!-- Home -->
+
+	<!-- Blog Image -->
+
+	<div class="blog_top_image">
+		<div class="blog_top">
+			<div><img height="10%" width="100%" data-parallax="scroll" data-speed="0.8" class="blog_background parallax-window" src="{{detail.Image}}"></div>
+		</div>
+	</div>
+
+	<!-- Blog Content -->
+
+	<div class="blog_container">
+		<div class="container">
+			<div class="row blog_content_row">
+				<div class="col">
+					<div class="blog_content">
+						<div class="blog_post_title_container">
+							<div class="blog_category"><a href="#">travel</a></div>
+							<div class="blog_title">{{detail.Title}}</div>
+						</div>
+						<div class="blog_text">
+							{{detail.Description}}
+						</div>
+						<div class="blog_tags">
+							<ul>
+								<li><a href="#">Manual</a></li>
+								<li><a href="#">Liberty</a></li>
+								<li><a href="#">Interpretation</a></li>
+								<li><a href="#">Recommendations</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Similar Posts -->
+		</div>
+	</div>
+
+
+</div>
+
+	<!--Footer-->
+	<app-footer ></app-footer>
+	<!--End Of Footer-->

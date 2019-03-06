@@ -1,0 +1,63 @@
+
+
+<div class="main login" style="padding:6% 0px;padding-bottom:21em;">
+  <!-- Sign up form -->
+       <section class="signup">
+           <div class="container">
+               <div class="signup-content">
+                   <div class="signup-form">
+                       <h2 class="form-title">Sign up</h2>
+                       <form #signUpForm = "ngForm" novalidate class="register-form" id="register-form">
+                           <div class="form-group">
+                               <label for="name">  <i class="fa fa-user"></i></label>
+                               <input type="text" name="name" id="name" [(ngModel)]="details.Name" placeholder="Your Name" #name = "ngModel" required />
+                               <div *ngIf="name.errors?.required && name.touched" class="error ">
+                                Please enter name.
+                              </div>
+                           </div>
+                           <div class="form-group">
+                            <label for="contactNo"><i class="fa fa-envelope"></i></label>
+                            <input type="text" name="contactNo" id="contactNo" [(ngModel)]="details.contactNo" #contactNo="ngModel" placeholder="Your Contact Number" required />
+                            <div *ngIf="contactNo.errors?.required && contactNo.touched" class="error ">
+                             Please enter Contact Number.
+                           </div>
+                        </div>
+                           <div class="form-group">
+                               <label for="email"><i class="fa fa-envelope"></i></label>
+                               <input type="email" name="email" id="email" [(ngModel)]="details.email" placeholder="Your Email" #email = "ngModel" required />
+                               <div *ngIf="email.errors?.required && email.touched" class="error ">
+                                Please enter email.
+                              </div>
+                           </div>
+                           <div class="form-group">
+                               <label for="pass">  <i class="fa fa-lock"></i></label>
+                               <input type="password" name="pass" id="pass" [(ngModel)]="details.Password" placeholder="Password" #password = "ngModel" required/>
+                               <div *ngIf="password.errors?.required && password.touched" class="error ">
+                                Please enter email.
+                              </div>
+                           </div>
+                           <div class="form-group">
+                               <label for="re-pass">  <i class="fa fa-lock"></i></label>
+                               <input type="password" name="re_pass" id="re_pass" [(ngModel)]="details.repeatPassword" placeholder="Repeat your password" #repeatPassword = "ngModel" required/>
+                               <div *ngIf="repeatPassword.errors?.required && repeatPassword.touched" class="error ">
+                                Please enter email.
+                              </div>
+                           </div>
+                           <div class="form-group">
+                               <input type="checkbox" name="agree-term" id="agree-term" [(ngModel)]="details.remember" class="agree-term" />
+                               <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                           </div>
+                           <div class="form-group form-button">
+                               <!-- <input type="submit" name="signup" id="signup" class="form-submit" style="border-radius:30px;" value="Register"/> -->
+                               <button [disabled]="!signUpForm.valid"  class="form-submit" (click)="submit()">Register</button>
+                           </div>
+                       </form>
+                   </div>
+                   <div class="signup-image">
+                       <figure><img src="assets/images/signup-image.jpg" alt="sing up image"></figure>
+                       <a href="#" (click)="login();false" class="signup-image-link">I am already member</a>
+                   </div>
+               </div>
+           </div>
+       </section>
+   </div>

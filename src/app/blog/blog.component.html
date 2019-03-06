@@ -1,0 +1,107 @@
+<!-- <div *ngIf="showPage"> -->
+
+<!--Header-->
+
+
+<app-header ></app-header>
+<!--End of Header-->
+
+
+
+<!-- Blog -->
+<div *ngIf="showremaining;else elseblock">
+<div class="blog">
+		<div class="container">
+
+
+			<!-- Blog Posts -->
+			
+			<div class="row blog_row">
+
+				<!-- Blog Post -->
+				<div class="col-lg-6" *ngFor="let blog of response">
+					<div class="blog_post">
+						<div class="blog_image"><img src='{{blog.Image}}'></div>
+						<div class="blog_title_container">
+							<div class="blog_post_category"><a href="#">travel</a></div>
+							<div class="blog_post_title"><a (click)="goto(blog.id)">{{blog.Title}}</a></div>
+							<div class="blog_post_text">
+								<p>{{blog.Description}}</p>
+							</div>
+							<div class="read_more"><a (click)="goto(blog.id)">Read More <img src="assets/images/right.png" alt=""></a></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Blog Post -->
+
+				<!-- Blog Post -->
+				<!-- Blog Post -->
+
+				<!-- Blog Post -->
+
+				<!-- Blog Post -->
+
+			</div>
+
+			<!-- Load More -->
+			<div class="row">
+				<div class="col">
+					<div class="load_more_button"><a (click)="show()">Show less</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<ng-template #elseblock>
+	<div class="blog">
+		<div class="container">
+
+			<!-- Blog Posts -->
+			
+			<div class="row blog_row">
+
+				<!-- Blog Post -->
+				<div class="col-lg-6">
+					<div class="blog_post">
+						<div class="blog_image"><img src='{{r1.Image}}'></div>
+						<div class="blog_title_container">
+							<div class="blog_post_category"><a href="#">travel</a></div>
+							<div class="blog_post_title"><a (click)="goto(r1.id)">{{r1.Title}}</a></div>
+							<div class="blog_post_text">
+								<p>{{r1.Description}}</p>
+							</div>
+							<div class="read_more"><a (click)="goto(r1.id)">Read More <img src="assets/images/right.png" alt=""></a></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="blog_post">
+						<div class="blog_image"><img src='{{r2.Image}}'></div>
+						<div class="blog_title_container">
+							<div class="blog_post_category"><a href="#">travel</a></div>
+							<div class="blog_post_title"><a (click)="goto(r2.id)">{{r2.Title}}</a></div>
+							<div class="blog_post_text">
+								<p>{{r2.Description}}</p>
+							</div>
+							<div class="read_more"><a (click)="goto(r2.id)">Read More <img src="assets/images/right.png" alt=""></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Load More -->
+			<div class="row">
+				<div class="col">
+					<div class="load_more_button"><a (click)="show()">Show more</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-template>
+<!-- </div> -->
+
+
+	<!--Footer-->
+	<app-footer ></app-footer>
+	<!--End Of Footer-->

@@ -1,0 +1,6 @@
+@import url('/assets/fonts/material-icon/css/material-design-iconic-font.min.css');
+@import url('/assets/css/style.css');
+
+.modal-backdrop.show {
+    opacity: 0 !important;;
+}

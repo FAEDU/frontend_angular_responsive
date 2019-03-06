@@ -1,0 +1,305 @@
+<div class="main" style="padding:15% 0px; background-image: linear-gradient(#2980B9,#6DD5FA);">
+  <!-- Sing in  Form -->
+          
+          <section class="sign-in">
+              <div class="container">
+                  <div class="text-center" >
+                  <img class="img-responsive" src="assets/images/logo.png">
+                      <br>
+                       <h2  *ngIf="isStudent" class="form-title">Register as a Student</h2>
+                       <h2  *ngIf="!isStudent" class="form-title">Register as a Mentor</h2>
+                  </div>
+                  
+                     <form enctype="multipart/form-data"   *ngIf="isStudent" class="col-md-12"  #studentForm = "ngForm">
+     <div class="form-row row">
+       <div class="form-group col-md-6">
+        <label for="inputName">Name</label>
+        <input type="name" class="form-control" id="name"  [(ngModel)]="detailstudent.name" #name= "ngModel"  name = "name" required placeholder="Your Name">
+      
+       </div>
+        
+        <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" [(ngModel)]="detailstudent.emailID" #emailID= "ngModel" name = "Email" required  placeholder="Your Email Address">
+        
+        </div>
+       </div>
+                         
+      <div class="form-row row">       
+      <div class="form-group col-md-6">
+        <label for="inputContact">Contact Number</label>
+        <input type="name" class="form-control" id="inputContact" placeholder="Your Contact Number" [(ngModel)]="detailstudent.contactNo" #contactNo= "ngModel" name = "contactNo" required >
+       
+      </div>
+          <div class="form-group col-md-6">
+        <label for="inputState">Applying for</label>
+        <select id="inputState" class="form-control" name = "ApplyingFor" [(ngModel)]="detailstudent.ApplyingFor" #ApplyingFor = "ngModel" required >
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      </div>
+            
+      <div class="form-row row">  
+      <div class="form-group col-md-6">
+        <label for="inputState">Target Application Session</label>
+        <select id="inputState" class="form-control" [(ngModel)]="detailstudent.TargetAppSession" #TargetAppSession = "ngModel" name="TargetAppSession" required >
+            <option selected>...</option>
+            <option>Jan</option>
+            <option>Feb</option>
+            <option>Mar</option>
+            <option>Apr</option>
+            <option>May</option>
+            <option>Jun</option>
+            <option>July</option>
+            <option>Aug</option>
+            <option>Sep</option>
+            <option>Oct</option>
+            <option>Nov</option>
+            <option>Dec</option>
+            
+          <option>...</option>
+        </select>
+          </div>
+     <div class="form-group col-md-6">
+        <label for="inputState"><br></label>
+        <select id="inputState" class="form-control inline" name = "targetappsessionyear" [(ngModel)]="targetappsessionyear">
+            <option selected>...</option>
+            <option>2018</option>
+            <option>2019</option>
+            <option>2020</option>
+          <option>...</option>
+        </select>
+          </div>
+          <br>
+      </div>
+                         
+    <div class="form-row row">
+      <div class="form-group col-md-6">
+        <label for="inputState">What do you want to study</label>
+        <select id="inputState" class="form-control"  [(ngModel)]="detailstudent.StudyField" #StudyField = "ngModel" name="StudyField" required >
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+        
+        <div class="form-group col-md-6">
+        <label for="inputCity">Any Particular Specialization</label>
+        <input type="text" class="form-control" id="inputCity"  [(ngModel)]="detailstudent.Specialization" #Specialization = "ngModel" name="Specialization" required>
+      </div>
+    </div>
+                         
+                         
+    <div class="form-group row">
+       <div class="form-group col-md-12">
+        <label for="inputState">Where do you want to study</label>
+        <select id="inputState" class="form-control" [(ngModel)]="detailstudent.StudyCountry" #StudyCountry = "ngModel" name="StudyCountry" required>
+            <option selected>USA</option>
+            <option>Canada</option>
+            <option>Neteherlands</option>
+            <option>Australia</option>
+        </select>
+      </div>
+    </div>
+  
+  
+    <div class="form-row row">
+      <div class="form-group col-md-6">
+        <label for="inputState">GRE Score (if already appeared)</label>
+        <input type="text" class="form-control" id="GRE_Score" [(ngModel)]="detailstudent.GreScore" #GreScore= "ngModel" name = "GreScore" required >
+      </div>
+        
+        <div class="form-group col-md-6">
+        <label for="inputCity">TOEFL/IELTS  Score (if already appeared)</label>
+        <input type="text" class="form-control" id="TOEFL_Score" [(ngModel)]="detailstudent.ToeflIeltsScore" #ToeflIeltsScore = "ngModel" name="ToeflIeltsScore" required>
+      </div>
+    </div>
+             
+                         
+    <div class="form-row row">
+      <div class="form-group col-md-6">
+        <label for="inputState">Undergrad GPA (if applicable)</label>
+        <input type="text" class="form-control" id="GPA" [(ngModel)]="detailstudent.UgGPA" #UgGPA = "ngModel" name="UgGPA" required >
+      </div>
+        
+        <div class="form-group col-md-6">
+        <label for="inputCity">Undergrad University</label>
+        <input type="text" class="form-control" id="University" [(ngModel)]="detailstudent.UgUniversity" #UgUniversity= "ngModel" name="UgUniversity" required >
+      </div>
+    </div>
+
+    
+    <div style="display: flex">
+      <input [readonly]="isfileuploaded" #file type="file" (change)="filechange($event)" value="this.detailstudent.ResumeUrl" name="file">
+      <button [hidden]="isresumeuploaded" type ="submit" (click)="uploadResume()" class="form-submit" style="border-radius:30px;background-color:grey" >Upload</button>
+    </div>
+  <!-- <div class="form-group row">
+      <div class="col-md-4" style="margin-top:15px;"> <label for="exampleFormControlFile1">Date of Appointment</label></div>
+      <div class="col-md-8" > </div>
+  </div>
+                   
+   <div class="form-group row">
+      <div class="col-md-4" style="margin-top:15px;"> <label for="exampleFormControlFile1">Time of Appointment</label></div>
+      <div class="col-md-8" > </div>
+  </div>
+  <br>                        
+                         
+  <div class="form-group">
+    <label for="description">How can we help you?</label>
+    <textarea class="form-control" rows="5" id="comment" placeholder="Write here. It will help the counsellor to prepare for your questions in advance."></textarea>
+  </div>
+                          -->
+  
+  <div class="form-group form-button text-center">
+      <!-- <input type="submit" name="register" id="register" class="form-submit" style="border-radius:30px;" value="Register" /> -->
+      <!-- <button type ="submit"  class="form-submit" style="border-radius:30px" [disabled]="!student.form.valid" (click)="submit()">Register</button> -->
+      <button type ="submit"  class="form-submit" style="border-radius:30px" (click)="submit()">Register</button>
+  </div>
+  <br><br><br>
+                         
+  
+    
+    
+  </form>
+
+
+  <form *ngIf="!isStudent" #mentorForm = "ngForm" class="col-md-12">
+    <div class="form-row row">
+      <div class="form-group col-md-6">
+       <label for="inputName">Name</label>
+       <input type="name" class="form-control" id="name" placeholder="Your Name" [(ngModel)]="detailmentor.Name" #name = "ngModel" name = "name" required>
+      
+      </div>
+       
+       <div class="form-group col-md-6">
+       <label for="inputEmail4">Email</label>
+       <input type="email" class="form-control" id="inputEmail4" placeholder="Your Email Address" [(ngModel)]="detailmentor.EmailID" #email = "ngModel" name = "email"  required>
+     
+       </div>
+      </div>
+                        
+     <div class="form-row row">       
+     <div class="form-group col-md-6">
+       <label for="inputContact">Contact Number</label>
+       <input type="name" class="form-control" id="inputContact" placeholder="Your Contact Number" [(ngModel)]="detailmentor.ContactNum" #contact = "ngModel" name = "inputContact" required>
+      
+     </div>
+         <div class="form-group col-md-6">
+       <label for="inputUniversity">University</label>
+       <input type="name" class="form-control" id="inputUniversity" placeholder="Your University" [(ngModel)]="detailmentor.UniversityName" #inputUniversity = "ngModel" name = "inputUniversity" required>
+       
+     </div>
+     </div>
+                        
+     <div class="form-row row">  
+     <div class="form-group col-md-12">
+       <label for="inputState">What are the services you can assist students with?</label>
+       <select id="inputState" class="form-control" [(ngModel)]="detailmentor.Services" #Services = "ngModel" name  = "Services" required>
+         <option selected>Choose...</option>
+         <option>...</option>
+       </select>
+       
+     </div><br>
+     </div>
+                        
+   <div class="form-row row">
+     <div class="form-group col-md-6">
+       <label for="inputState">Major</label>
+       <select id="inputState" class="form-control" [(ngModel)]="detailmentor.Major" #major = "ngModel" name ="Major" required>
+         <option selected>Choose...</option>
+         <option>...</option>
+       </select>
+      
+     </div>
+       <div class="form-group col-md-6">
+       <label for="inputCity">Any Particular Specialization</label>
+       <input type="text" class="form-control" id="inputCity" [(ngModel)]="detailmentor.Specialization" #Specialization = "ngModel"  name = "Specialization" required>
+      
+     </div>
+   </div>
+                        
+                        
+   <div class="form-group col-md-12 row">
+     <label for="inputAddress">LinkedIn Profile URL</label>
+     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" [(ngModel)]="detailmentor.LinkedInUrl" #LinkedInUrl = "ngModel" name="LinkedInUrl" required>
+     
+   </div>
+ 
+ <div class="form-row row">  
+     <div class="form-group col-md-12">
+       <label for="inputState">How many hours you can devote per week?</label>
+       <select id="inputState" class="form-control" [(ngModel)]="detailmentor.Hrs" #Hrs = "ngModel" required name="Hrs">
+         <option selected>Choose...</option>
+         <option>1-2</option>
+         <option>3-4</option>
+         <option>5-6</option>
+         <option>7-8</option>
+         <option>9-10</option>
+         <option>11-12</option>
+         <option>13-14</option>
+         <option>15-16</option>
+         <option>17-18</option>
+       </select>
+       
+     </div><br>
+ </div>
+         
+  <div class="form-group row">
+                   <div class="col-md-4" style="margin-top:15px;"> <label for="exampleFormControlFile1">Resume</label></div>
+                  <div class="col-md-8" > <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file" required name="ResumeUrl" (change)="filechange($event)">
+                    <button [hidden]="isresumeuploaded" type ="submit" (click)="uploadResume()" class="form-submit" style="border-radius:30px;background-color:grey" >Upload</button>
+                  </div>
+  </div>
+ 
+ <div class="form-group row">
+     <div class="col-md-4" style="margin-top:15px;"> <label for="exampleFormControlFile1">Profile Picture</label></div>
+     <div class="col-md-8" > <input type="file" accept="image/*" (change)="filechange($event)" name="file" class="form-control-file" id="exampleFormControlFile1"  required name="ProfilePic">
+      <button [hidden]="isphotouploaded" type ="submit" (click)="uploadPhoto()" class="form-submit" style="border-radius:30px;background-color:grey" >Upload</button>
+    </div>
+ </div>
+ <br>
+                        
+ <div class="form-row row">  
+     <div class="form-group col-md-12">
+       <label for="inputState">Your best availablity</label>
+         
+    
+         <select id="inputState" class="form-control" [(ngModel)]="detailmentor.Availability" [(ngModel)]="detailmentor.Availability" #Availability = "ngModel" required name="Availability" >
+             <option selected>Choose...</option>
+             <option>...</option>
+            
+         </select>
+   
+         
+     </div><br>
+ </div>    
+                        
+ <div class="form-group">
+   <label for="description">Brief Description of your profile</label>
+   <textarea class="form-control" rows="5" id="comment" placeholder="Inclusing Information about your Undergraduation, Internships, Research papers, Industrial Experiences and Scholarships, etc." [(ngModel)]="detailmentor.Description" #Description = "ngModel" name="Description" required></textarea>
+  
+ </div>
+                        
+ 
+ <div class="form-group form-button text-center">
+     <!-- <input type="submit" name="register" id="register" class="form-submit" style="border-radius:30px;" value="Register" /> -->
+     <!-- <button type ="submit"  class="form-submit" style="border-radius:30px" [disabled]="!mentorForm.form.valid" (click)="submit()">Register</button>
+ </div> -->
+ <button type ="submit"  class="form-submit" style="border-radius:30px" (click)="submit()">Register</button>
+</div>
+ <br><br><br>
+                        
+ 
+   
+   
+ </form>
+ 
+                  </div>
+              
+          </section>
+      </div>
+  
+      
+      
+      
+  

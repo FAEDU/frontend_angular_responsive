@@ -1,0 +1,61 @@
+
+<!--Header-->
+
+
+<app-header ></app-header>
+<!--End of Header-->
+
+
+<div class="events" style="margin-top: 15%;">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h2 class="section_title text-center">Upcoming Events</h2>
+				</div>
+			</div>
+			<div class="row events_row" >
+
+				<!-- Event -->
+				<div class="col-lg-4 event_col"*ngFor="let event of events">
+					<div class="event">
+						<div class="event_image"><img src="{{event.imageUrl}}" alt=""></div>
+						<div sty class="event_date d-flex flex-column align-items-center justify-content-center">
+							<div class="event_day"><h6 style="font-size: 38%;">{{event.Date}}</h6></div>
+							<div class="event_month"><h6 style="font-size: 120%;">{{event.Time}}</h6></div>
+						</div>
+						<div class="event_body d-flex flex-row align-items-center justify-content-start">
+							<div (click)="eventclicked(event.Desc,event.name,event.Time,event.Date)" class="event_title"><a data-toggle="modal" data-target="#largeModal">{{event.Desc}}</a></div>
+							<div class="event_tag ml-auto">Free</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+	<div style="margin-top:13%;" class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+					<h3 style="text-align: center;" class="modal-title" id="largeModalLabel">{{Name}}</h3>
+					<div class="modal-body" id="largeModalLabel">
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Description</h5>
+					<p style="text-align: center;font-size:120%; ">{{desc}}</p>
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Date</h5>
+					<p style="text-align: center">{{date}}</p>
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Time</h5>
+					<p style="text-align: center;font-size:120%; ">{{time}}</p>
+					<div style="text-align: center;"><input name="email" [(ngModel)]="eemail" type="email">
+					<button style="text-align: center;" (click)="register()">Register</button></div>
+				</div>
+				<div class="modal-footer">
+					<button id="closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Footer-->
+	<app-footer ></app-footer>
+	<!--End Of Footer-->

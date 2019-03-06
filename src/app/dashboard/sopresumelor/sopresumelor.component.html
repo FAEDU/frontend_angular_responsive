@@ -1,0 +1,47 @@
+
+        <div style="margin-top:4em;" class="container" style="padding:16% 2%;">
+          <div class="row">
+
+              <div class="col-sm-4 animated fadeInDown">
+                  <div class="au-card recent-report">
+                      <div class="au-card-inner">
+                          <h3 class="title-2 text-center">SOP</h3>
+                    <div *ngIf="isuploadedsop; else elseBlock1">
+                              <img src="/assets/images/upload.png">
+                              <input name="file" type="file" (change)="sopchange($event)">
+                            </div>
+                            <ng-template #elseBlock1><div style="text-align: center;"><img height="10%" width=10% src="/assets/images/check1.png"><h1 style="text-align: center">Uploaded</h1></div></ng-template>
+                            </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4 animated fadeInDown">
+                              <div class="au-card recent-report">
+                                  <div class="au-card-inner">
+                                      <h3 class="title-2 text-center">Resume</h3>
+                    <div *ngIf="isuploadedresume else elseBlock2">
+                        <img src="/assets/images/upload.png">
+                        <input name="file" type="file" (change)="resumechange($event)">
+                            </div>
+                            <ng-template #elseBlock2><div style="text-align: center;"><img height="10%" width=10% src="/assets/images/check1.png"><h1 style="text-align: center">Uploaded</h1></div></ng-template>
+                            </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4 animated fadeInDown">
+                            <div class="au-card recent-report">
+                                  <div class="au-card-inner">
+                                      <h3 class="title-2 text-center">LOR</h3>
+                        <div *ngIf="isuploadedlor; else elseBlock3">
+                            <img src="/assets/images/upload.png">
+                              <input name="file" type="file" (change)="lorchange($event)">
+                            </div>
+                            <ng-template #elseBlock3><div style="text-align: center;"><img height="10%" width=10% src="/assets/images/check1.png"><h1 style="text-align: center">Uploaded</h1></div></ng-template>
+                            </div>
+                            </div>
+                          </div>
+        </div>
+        <div [hidden]="isdocumentupload" (click)="uploadfiles()" style="text-align: center"><button style="font-size:1em;border-radius:10%;background-color: cyan;padding:1% 2%">Submit</button></div>
+      </div>
+      
+    
+   
+
