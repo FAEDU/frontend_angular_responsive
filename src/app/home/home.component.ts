@@ -204,4 +204,8 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl(`/universitydetail/${u.id}/${u.imageUrl}`)
   }
 
+  open(){
+    this.router.navigateByUrl('/login/mentor');
+  }
+
 }
