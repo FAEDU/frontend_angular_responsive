@@ -90,6 +90,7 @@ export class HomeComponent implements OnInit {
     },400);
     this.commonService.getevents().subscribe(res=>{
       this.response=res
+      console.log(this.response)
       this.upcoming(this.response);
     })
     this.commonService.getUniversitiesData().subscribe(res=>{
@@ -202,10 +203,6 @@ export class HomeComponent implements OnInit {
 
   goto(u){
     this.router.navigateByUrl(`/universitydetail/${u.id}/${u.imageUrl}`)
-  }
-
-  open(){
-    this.router.navigateByUrl('/login/mentor');
   }
 
 }

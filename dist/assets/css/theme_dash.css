@@ -39,6 +39,7 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
 /*-----------------------------------------------------*/
 /*                   GENERIC                           */
 /*-----------------------------------------------------*/
+
 @keyframes swing {
   0% {
     transform: rotate(0deg);
@@ -130,14 +131,7 @@ body {
     padding-left: 300px;
   }
 }
-.mockcard
-{
-  margin-top: 15%;
-}
-.accomodationtop
-{
-  margin-top: 15%;
-}
+
 /*----------------show sidebar button----------------*/
 #show-sidebar {
   position: fixed;
@@ -933,7 +927,7 @@ section {
 }
 
 .main-content {
-    /*padding-top: 116px;*/
+    padding-top: 116px;
     min-height: 100vh;
 }
 
@@ -1851,6 +1845,7 @@ section {
 @media (max-width: 991px) {
     .logo {
         text-align: center;
+        width: inherit;
     }
 }
 
@@ -2046,9 +2041,9 @@ section {
 }
 
 .account-item > .content > a {
-    color: #333;
-    text-transform: capitalize;
-    font-weight: 500;
+    color: #333!important;
+    text-transform: capitalize!important;
+    font-weight: 500!important;
 }
 
 

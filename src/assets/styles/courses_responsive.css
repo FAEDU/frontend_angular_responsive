@@ -228,6 +228,10 @@
 
 @media only screen and (max-width: 767px)
 {
+	.colpad
+	{
+		padding-top: 5%;
+	}
 	.top_bar
 	{
 		display: none;
@@ -264,6 +268,10 @@
 
 @media only screen and (max-width: 575px)
 {
+	.colpad
+	{
+		padding-top: 5%;
+	}
 	h1{font-size: 28px;}
 	h2{font-size: 24px;}
 	.header_content
@@ -301,12 +309,13 @@
 	}
 	.menu_extra
 	{
-		right: 20px;
+		/*right: 20px;*/
 		bottom: 10px;
 	}
 	.menu_phone, .menu_social
 	{
 		font-size: 10px;
+		margin-bottom: -20px;
 	}
 	.menu_social
 	{

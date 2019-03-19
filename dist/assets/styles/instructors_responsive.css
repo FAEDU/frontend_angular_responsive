@@ -300,16 +300,15 @@
 	}
 	.menu_extra
 	{
-		right: 20px;
 		bottom: 10px;
 	}
 	.menu_phone, .menu_social
 	{
-		font-size: 10px;
+		font-size: 12px;
 	}
 	.menu_social
 	{
-		margin-top: 0;
+		margin-top: -20px;
 	}
 	.instructor_image_container
 	{

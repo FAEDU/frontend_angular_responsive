@@ -420,7 +420,7 @@ section
 }
 .logo_container
 {
-	width: 0px;
+	/*width: 0px;*/
 }
 .logo
 {
@@ -873,7 +873,7 @@ section
 .menu_extra
 {
 	position: absolute;
-	right: 60px;
+	/*right: 60px;*/
 	bottom: 30px;
 }
 .menu_phone,

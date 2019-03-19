@@ -2,14 +2,14 @@
 
 
    <div style=" background-color: white" *ngIf="who;else elseblock">
-       <h1 style="font:bold;margin-top:15%;text-align: left;">Welcome Back {{name}}</h1>
+       <h1 style="font:bold;/*margin-top:15%;*/text-align: left;">Welcome Back {{name}}</h1>
    </div>
    <ng-template #elseblock>
     <div class="main-content">
       <div class="section__content section__content--p30">
           <div class="container-fluid">
-              <br>
-              <div class="row" style="margin-top: 8%;">
+              
+              <div class="row" style="/*margin-top: 8%;*/">
                   <!--Country-->
                 <div class="col-md-2" style="padding-top: 3px;">
                   <div  class="input-group" >
@@ -116,17 +116,22 @@
                   </select>
                   </div>
                 </div> 
-              <div class="col-md-6" style="text-align: center; padding-top: 6px;">  
-  <button style="width: 120px;  color: white;  background: #4272d7;" class="btn btn-outline-info" type="button" (click)="applyfilter()">Apply Filter</button><button style="margin-left: 1%; width: 100px;" class="btn btn-danger" type="button" (click)="reset()">Reset</button>
-  <input name="search" [(ngModel)]="searchbar" style="margin-left:4%;margin-right:3%;text-align: center" type="text"><button (click)="search()">search</button>
-
-</div>
-  </div><br><br>
+                             <div class="col-md-3" style="text-align: center; ">  
+                              <button style="width: 120px;  color: white;  background: #4272d7;" class="btn btn-outline-info" type="button" (click)="applyfilter()">Apply Filter</button><button style="margin-left: 3%; width: 100px;" class="btn btn-danger" type="button" (click)="reset()">Reset</button>
+                            </div>
+                              <div class="col-md-4">
+                                <input class="form-control" placeholder="Search For Your University" name="search" [(ngModel)]="searchbar" style="width: 100%" type="text">
+                              </div>
+                              <div class="col-md-1">
+                                <button style="background: #4272d7;" class="btn btn-info " (click)="search()">Search<i style="padding-left: 3px;" class="fa fa-search" aria-hidden="true"></i></button>
+                              </div>
+  </div>
+  <br><br>
               <div class="row">
 
                 </div>
               <div class="row">
-                  <div *ngFor= "let list of finaldata" class="col-lg-6 animated fadeInDown">
+                  <div *ngFor= "let list of finaldata" class="col-lg-6 animated ">
                       <div class="au-card recent-report">
                           <div class="au-card-inner">
                               <h3 class="title-2">{{list.name}}</h3>
@@ -142,31 +147,12 @@
                               <p>{{list.desc}}</p>
                               </div>
                                <div class="a-card-title">
-                                    <a (click)="details(list.id,list.imageUrl)" data-toggle="modal" data-target="#largeModal">Want Details</a>
+                                    <button (click)="details(list.id,list.imageUrl)" onclick="document.getElementById('id01').style.display='block'" class="btn btn-secondary btn-sm ">Want Details</button>
+                                    <!-- <a (click)="details(list.id,list.imageUrl)" data-toggle="modal" data-target="#largeModal">Want Details</a> -->
                               </div>
                           </div>
                       </div>
                   </div>
-<!--                   
-                  <div class="col-lg-6 animated fadeInDown">
-                      <div class="au-card recent-report">
-                          <div class="au-card-inner">
-                              <h3 class="title-2">University of Texas</h3>
-                              <div class="chart-info">
-                              </div>
-                              <img style="margin:2%;" class="img-responsive" src="assets/images/Universities/texas.png">
-                              <br><br>
-                              <div>
-                              <p>Texas A&M opened its doors in 1876 as the state's first public institution of higher learning. Today, we stand as a research-intensive flagship university dedicated to sending Aggie leaders...</p>
-                              </div>
-                               <div class="a-card-title">
-                                   <button class="a-btn-plus"  data-toggle="modal" data-target="#staticModal">
-                                  <i class="zmdi zmdi-plus"></i>
-                              </button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>    -->
               </div>
               
               <!-- <div class="row">
@@ -218,26 +204,71 @@
       </div>
   </div>
 
-</ng-template>
+<div class="w3-container" style="z-index: 10000;">
+   <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+                <div class="modal-header">
+                          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+        <img src="assets/images/blog_1.jpg">
 
-<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+        <h3 style="text-align: center;" class="modal-title" id="largeModalLabel">{{university.name}}</h3><br>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Description</h5>
+              <p style="text-align: center;font-size:120%; font-weight: 500;">{{university.desc}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Location</h5>
+              <p style="text-align: center;font-size:120%;font-weight: 500; ">{{university.location}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">GRE Score</h5>
+              <p style="text-align: center;font-weight: 500;">{{university.GRE}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">TOEFL Score</h5>
+              <p style="text-align: center;font-size:120%;font-weight: 500;">{{university.TOEFL}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Ranking</h5>
+              <p style="text-align: center;font-weight: 500;">{{university.ranking}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Top Recruiters</h5>
+              <p style="text-align: center;font-weight: 500;">{{university.TopRecruiters}}</p>
+              <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Courses</h5>
+              <p style="text-align: center;font-weight: 500;">{{courses}}</p>
+                <hr>
+                <div style="text-align: right;">
+              <button style="margin-bottom: 8px;" onclick="document.getElementById('id01').style.display='none'" id="closebutton" type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel"  aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
+
               <h3 style="text-align: center;" class="modal-title" id="largeModalLabel">{{university.name}}</h3><br>
               <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Description</h5>
-              <p style="text-align: center;font-size:120%; ">{{university.desc}}</p>
+              <p style="text-align: center;font-size:120%; font-weight: 600;">{{university.desc}}</p>
               <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Location</h5>
-              <p style="text-align: center;font-size:120%; ">{{university.location}}</p>
+              <p style="text-align: center;font-size:120%; font-weight: 600;">{{university.location}}</p>
               <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">GRE Score</h5>
               <p style="text-align: center">{{university.GRE}}</p>
               <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">TOEFL Score</h5>
-              <p style="text-align: center;font-size:120%;">{{university.TOEFL}}</p>
+              <p style="text-align: center;font-size:120%;font-weight: 600;">{{university.TOEFL}}</p>
               <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Ranking</h5>
               <p style="text-align: center">{{university.ranking}}</p>
               <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Top Recruiters</h5>
-              <p style="text-align: center">{{university.TopRecruiters}}</p>
+              <p style="text-align: center;font-weight: 600;">{{university.TopRecruiters}}</p>
               <h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Courses</h5>
-              <p style="text-align: center">{{courses}}</p>
+              <p style="text-align: center;font-weight: 600; ">{{courses}}</p>
               
           <div class="modal-footer">
               <button id="closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -245,6 +276,10 @@
       </div>
   </div>
 </div>
+
+</ng-template>
+
+
 
 
 

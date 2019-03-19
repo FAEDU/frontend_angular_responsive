@@ -36,7 +36,10 @@
 /*********************************
 2. Body and some general stuff
 *********************************/
-
+.contactbox
+{
+	margin-left: 25.5%;
+}
 *
 {
 	margin: 0;
@@ -259,7 +262,7 @@ section
 }
 .header.scrolled
 {
-	top: -51px;
+	top: -5px !important;
 }
 
 /*********************************
@@ -435,11 +438,11 @@ section
 .logo_text_nav
 {
 	display: inline-block;
-	visibility: hidden;
+	/*visibility: hidden;*/
 }
 .logo_container
 {
-	width: 0px;
+	width: 100px;
 }
 .logo
 {
@@ -505,7 +508,7 @@ section
 }
 .main_nav li a
 {
-	padding-right: 25px;
+	/*padding-right: 25px;*/
 	font-size: 17px;
 	font-weight: 700;
 	color: rgba(0,0,0,0.45);
@@ -996,7 +999,7 @@ section
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 125%;
+	height: 100% !important;
     background-color: rgba(33, 58, 196, 0.38);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1326,7 +1329,7 @@ section
 	-ms-transform: translate(-50%, -50%);
 	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-	width: 61px;
+	/*width: 61px;*/
 	height: 25px;
 	background: #f9cf0e;
 	border-radius: 3px;
@@ -1351,7 +1354,7 @@ section
 .courses1
 {
 	padding-top: 60px;
-	padding-bottom: 80px;
+	/*padding-bottom: 80px;*/
 	background: #FFFFFF;
 }
 .courses_background1
@@ -1868,7 +1871,7 @@ section
 .events
 {
 	width: 100%;
-	padding-bottom: 50px;
+	padding-bottom: 25px;
 	background: #FFFFFF;
 }
 .events_row
@@ -2458,20 +2461,13 @@ section
 {
 	max-width: 50% !important;
 }
-.p1
-{
-	height: 90px;
-	margin-left: 90%;
+.pimg1{
+	margin: 2vh auto;
+	width:20%;
 }
-.p2
-{
-	height: 50px;
-	padding-left: 80%;
-}
-.p3
-{
-	height: 50px;
-	padding-left: 60%;
+.pimg{
+	margin: 2vh auto;
+	width:50%;
 }
 .brands
 {

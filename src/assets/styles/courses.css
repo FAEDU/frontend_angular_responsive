@@ -421,7 +421,7 @@ section
 }
 .logo_container
 {
-	width: 0px;
+	/*width: 0px;*/
 }
 .logo
 {
@@ -874,7 +874,7 @@ section
 .menu_extra
 {
 	position: absolute;
-	right: 60px;
+	/*right: 60px;*/
 	bottom: 30px;
 }
 .menu_phone,
@@ -1095,9 +1095,9 @@ section
 
 .courses1
 {
-	padding-bottom: 150px;
+	padding-bottom: 50px;
 	background: #f8f8f8;
-	padding-top: 19px;
+	padding-top: 0px;
 }
 .course_col1
 {
@@ -1559,6 +1559,10 @@ section
 }
 .heading
 {
-	margin-top: 12%; 
+	margin-top: 8%; 
 	text-align: center;
+}
+.colpad
+{
+	padding-top: 2%;
 }

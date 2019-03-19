@@ -1,11 +1,11 @@
  <!-- MAIN CONTENT-->
- <div style="margin-top:4em;" class="main-content">
+ <div style="margin-top:1em;" class="main-content">
     <div class="">
-        <div class="container-fluid" style="margin-top: 15%;">
+        <div class="container-fluid" style="/*margin-top: 15%;*/">
           <div class="row" >
                       <!-- DATA TABLE -->
                               
-  <div class="col-lg-3" style="margin-top: 50px;">
+  <div class="col-lg-3" style="/*margin-top: 50px;*/">
                   <div  class="input-group" >
                   <select [(ngModel)]="sspecilization" (click)="specfilteration($event)"  class="custom-select js-select2" name="country">
                    <option value="">Select Specialization</option>
@@ -16,7 +16,7 @@
 
 
 
-       <div class="col-lg-3" style="margin-top: 50px;">
+       <div class="col-lg-3" style="/*margin-top: 50px;*/">
                   <div  class="input-group" >
                   <select [(ngModel)]="suniversityname"  (click)="unifilteration($event)"  class="custom-select js-select2" name="country">
                    <option value="">Select University Name</option>
@@ -27,7 +27,7 @@
 
    
 
-               <div class="col-md-3" style="text-align: center; margin-top: 50px;">  
+               <div class="col-md-3" style="text-align: center;/* margin-top: 50px;*/">  
   <button style="width: 120px;  color: white;  background: #4272d7;" class="btn btn-outline-info" type="button" (click)="applyfilter()">Apply Filter</button>
   <button style="margin-left: 1%; width: 100px;" class="btn btn-danger" type="button" (click)="reset()">Reset</button>
 </div>
@@ -37,7 +37,7 @@
        <div class="col-md-12">
            <div class="row">
                 
-                <div *ngFor= "let mentor of filteredmentordata"class="col-md-4">
+                <div *ngFor= "let mentor of filteredmentordata"class="col-md-4" style="margin-top: 2%">
                     <div class="card">
                         <div class="card-header">
                             <strong class="card-title mb-3">Mentor</strong>
@@ -57,7 +57,7 @@
                             <hr>
                             <div class="card-text text-sm-center">
                                 <div class="card-text text-sm-center">
-                                    <button class="btn btn-primary"(click)="setdetails(mentor?.id,mentor?.Name,mentor?.ProfilePic,mentor?.EmailID)" data-toggle="modal" data-target="#largeModal">Book Appointment</button>
+                                    <button (click)="setdetails(mentor?.id,mentor?.Name,mentor?.ProfilePic,mentor?.EmailID)" onclick="document.getElementById('id01').style.display='block'" class="btn btn-primary">Book Appointment</button>
                                   </div>
                             </div>
                         </div>
@@ -81,6 +81,43 @@
 <!-- END MAIN CONTENT-->
 
 <!-- modal large -->
+
+
+<div class="w3-container" style="z-index: 10000;">
+   <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <div class="modal-header">
+                          <h5 class="modal-title" id="largeModalLabel">Hello {{username}}!</h5><!-- Card Heading-->
+                          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                <!-- Edit Form from here-->
+                <div class="col-lg-12"><!--Apply Match Parent Width-->
+                        <div class="card-body card-block">
+                            <div class="has-success form-group">
+                                <label for="inputIsValid" class=" form-control-label">Time of Appointment</label>
+                                <input required type="time" id="inputIsValid" [(ngModel)]="modal.Time" class="is-valid form-control-success form-control">
+                            </div>
+                            <div class="has-warning form-group">
+                                <label for="inputIsInvalid" class=" form-control-label">Date of Appointment</label>
+                                <input required type="date" id="inputIsInvalid" [(ngModel)]="modal.Date" class="is-invalid form-control">
+                            </div>
+                        </div>
+                </div>
+                <!--Form Section Ending-->
+            </div>
+                      <div class="modal-footer">
+                          <button onclick="document.getElementById('id01').style.display='none'" id= "closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                          <button type="button" (click)="submit()" class="btn btn-primary">Confirm</button>
+                      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
