@@ -55,42 +55,37 @@
 								  </div> -->
 							</div>
 							<div class="col-lg-6 register_col">
-								<input type="email" class="form_input" name ="email" [(ngModel)]="detail.Email" placeholder="Email" #email="ngModel"  required>
+								<input type="text" class="form_input" name ="email" [(ngModel)]="detail.Email" placeholder="Email" #email="ngModel"  required>
 								<!-- <div *ngIf="email.errors?.required && email.touched" class="error ">
 									Please enter email.
 								  </div> -->
 							</div>
 							<div class="col-lg-6 register_col">
-								<input type="tel" class="form_input" [(ngModel)]="detail.Phone" name ="query" placeholder="Phone" #phone="ngModel" required>
+								<input type="text" class="form_input" [(ngModel)]="detail.Phone" name ="query" placeholder="Phone" #phone="ngModel" required>
 								<!-- <div *ngIf="phone.errors?.required && phone.touched" class="error ">
 									Please enter phone.
 								  </div> -->
 							</div>
-							<div  class="col-lg-6 register_col">
+							<div style="padding: 7px;"  class="col-lg-6 register_col">
 											<select class="form-control" name="country" [(ngModel)]="detail.Degree">
-												<option value=''>Select Degree</option>
-												<option value="MBA">MBA</option>
-												<option value="MS">MS</option>
-												<option value="MiS">MiS</option>
+												<option value=''>Select Your Exam</option>
+												<option value="GRE">GRE Verbal</option>
+										<option value="GRE">GRE Quant</option>
+										<option value="TOEFL">TOEFL</option>
+										<option value="IELTS">IELTS</option>
 											</select>
 							</div>
 							<div class="col-lg-6 register_col">
-									<select class="form-control select_style" name="score" [(ngModel)]="detail.Score"  >
-										<option value="">Select your Score</option>
-										<option value="TOEFL">TOEFL</option>
-										<option value="IELTS">IELTS</option>
-										<option value="GRE">GRE</option>
-										
-										</select>
-															</div>
-															<div class="col-lg-6 register_col">
+									<input type="text" class="form_input" [(ngModel)]="detail.Phone" name ="query" placeholder="Your Marks" #phone="ngModel" required>
+										</div>
+															<div style="padding: 7px;" class="col-lg-6 register_col">
 																	<select class="form-control select_style" name="term" [(ngModel)]="detail.Term">
 																		<option value="">Select your Term</option>
 																		<option value="fall">Fall</option>
 																		<option value="springs">Springs</option>
 													</select>
 									</div>
-									<div  class="col-lg-6 register_col">
+									<div style="padding-top: 10px;"  class="col-lg-6 register_col">
 										<select class="form-control" name="country" [(ngModel)]="detail.Year">
 											<option value=''>Select Year</option>
 											<option value="2019">2019</option>
@@ -318,7 +313,7 @@
 						</div>
 						<div class="event_body d-flex flex-row align-items-center justify-content-start">
 							<div class="event_title">{{event.name}}</div>
-							<div (click)="eventclicked(event.Desc,event.name,event.Time,event.Date)" class="event_tag ml-auto"><a data-toggle="modal" data-target="#largeModal"><div style="padding:0 6%;font-size: 150%">+</div></a></div>
+							<div (click)="eventclicked(event.Desc,event.name,event.Time,event.Date)" class="event_tag ml-auto"><a onclick="document.getElementById('id01').style.display='block'"><div style="padding:0 6%;font-size: 150%">+</div></a></div>
 						</div>
 					</div>
 				</div>
@@ -388,8 +383,8 @@
 	<!-- University -->
 
 		<div  class="container text-center my-3">
-    <h3 style="margin-top:15%; ">Universities from which our students get admit from</h3>
-    <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+    <h3 style="margin-top:4%;font-size: 35px; ">Universities from which our students get admit from</h3>
+    <div style="margin-top: 5%;" id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
         <div class="carousel-inner w-100" role="listbox">
             <div class="carousel-item row no-gutters active">
                 <div class="col-3 float-left"><img class="img-fluid imsize"  src="assets/images/Universities/images.png"></div>
@@ -514,10 +509,10 @@
 
 
 		</div>
-			<div class="container" style="/*margin-left: 8%;*/ margin-top: 5%; margin-bottom: 5%; text-align: center;">
-			<h4 class="phead" style="font-family: 'Poppins', sans-serif;"> Our Partners in making your future better.</h4>
+			<div class="container" style="/*margin-left: 8%;*/ margin-top: 1%; margin-bottom: 5%; text-align: center;">
+			<h4 class="phead" style="font-family: 'Poppins', sans-serif;font-size: 35px;"> Our Partners in making your future better.</h4>
 			
-			<div class="row" style="text-align: center; margin: 0px auto;" >
+			<div class="row" style="text-align: center; margin: 40px auto;" >
 							<!-- <div class="col-lg-1"></div> -->	
 							<div style="text-align: center;" class="col-sm-4 pcol">	<img class="pimg1" src="assets/images/Patner/p1.jpg" alt=""></div>
 							<div style="text-align: center;" class="col-sm-4 pcol">	<img class="pimg" src="assets/images/Patner/p3.png" alt=""></div>
@@ -528,6 +523,43 @@
 					
 				</div>
 			</div>
+
+
+			<div class="w3-container" style="z-index: 10000;">
+   <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+                <div class="modal-header">
+                          <button onclick="document.getElementById('id01').style.display='none'" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+
+        
+					<h3 style="text-align: center;" class="modal-title" id="largeModalLabel">{{Name}}</h3>
+					<div class="modal-body" id="largeModalLabel">
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Description</h5>
+					<p style="text-align: center;font-size:120%; ">{{desc}}</p>
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Date</h5>
+					<p style="text-align: center">{{date}}</p>
+					<h5 style="text-align: center;" class="modal-title" id="largeModalLabel">Time</h5>
+					<p style="text-align: center;font-size:120%; ">{{time}}</p>
+					<div style="text-align: center;"><input style="width: 30%;text-align: center;" placeholder="Enter Your Email to Register" name="email" [(ngModel)]="eemail" type="email">
+					</div>
+					<div style="width: 8.5%; margin: 10px auto;">
+					<button class="btn btn-secondary btn-sm" style="text-align: center;background: #2e21df;" (click)="register()">Register</button>
+					</div>
+				
+                <hr>
+                <div style="text-align: right;">
+              <button style="margin-bottom: 8px; background: #f44336;" onclick="document.getElementById('id01').style.display='none'" id="closebutton" type="button" class="btn btn-secondary " data-dismiss="modal">Cancel</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 <!--Footer-->
 	<app-footer ></app-footer>
 	<!--End Of Footer-->

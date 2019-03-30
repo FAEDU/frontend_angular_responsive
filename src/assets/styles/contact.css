@@ -992,8 +992,8 @@ section
 }
 .contact_form_container
 {
-	position: absolute;
-	right: 15px;
+	
+	
 	bottom: 20px;
 	width: calc(100% - 30px);
 	background: #FFFFFF;
@@ -1045,11 +1045,8 @@ section
 	height: 101px;
 	padding-top: 13px;
 }
-.form_input:hover,
-.form_input:focus
-{
-	border-bottom: solid 2px #2e21df;
-}
+
+
 .form_input::-webkit-input-placeholder
 {
 	font-size: 14px !important;
@@ -1146,7 +1143,6 @@ section
 	outline: none;
 	cursor: pointer;
 	border-radius: 3px;
-	margin-top: 44px;
 }
 .form_button:hover
 {

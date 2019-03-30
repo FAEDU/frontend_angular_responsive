@@ -247,6 +247,33 @@
 
 @media only screen and (max-width: 767px)
 {
+
+	.footermiddle
+	{
+		float: none !important;
+		text-align: center;
+	}
+	.footermiddleicon
+	{
+		/*float: none !important;*/
+		text-align: center;
+		width: 100%;
+		margin: 5px auto;
+	}
+	.footericon
+	{
+		float: none !important;
+	}
+	.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: none;
+  width: 100% !important; /* Could be more or less, depending on screen size */
+  padding: 1.5%;
+  -webkit-box-shadow: -2px -1px 48px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: -2px -1px 48px -1px rgba(0,0,0,0.75);
+box-shadow: -2px -1px 48px -1px rgba(0,0,0,0.75);
+}
 		.pcol
 	{
 		width: 33% !important;
@@ -382,6 +409,12 @@
 
 @media only screen and (max-width: 575px)
 {
+	.social_icon {
+		font-size: 30px !important;
+		padding: 10px  !important;
+		margin-top:30%;
+	
+	}
 	.course_col1
 	{
 		margin: 5%;

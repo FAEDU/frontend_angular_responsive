@@ -116,10 +116,14 @@
 	{
 		margin-left: 33px;
 	}
+	.contactrow1
+	{
+		text-align: center;
+		margin-top: 23%;
+	}
 	.contact_form_container
 	{
 		position: relative;
-		margin-top: 80px;
 		width: 100%;
 		right: auto;
 		bottom: auto;

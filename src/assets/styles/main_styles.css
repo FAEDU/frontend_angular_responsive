@@ -40,6 +40,11 @@
 {
 	margin-left: 25.5%;
 }
+.contactrow1
+{
+	text-align: center;
+	margin-top: 7%;
+}
 *
 {
 	margin: 0;
@@ -1509,8 +1514,8 @@ section
 	padding-top: 88px;
 	padding-bottom: 30px;
 	background: #f8f8f8;
-	margin-left: -16%;
-	margin-top: 5%;
+	margin-left: -20%;
+	margin-top: 2%;
 }
 .instructors_background
 {
@@ -1627,11 +1632,12 @@ section
 }
 .register_form_container
 {
+	margin-top: 5%;
 	width: 100%;
 	background: #FFFFFF;
-	border: solid 0px #ebebeb;
+	border: solid 1px gray;
 	padding-top: 38px;
-	padding-left: 0px;
+	padding-left: 40px;
 	padding-right: 49px;
 	padding-bottom: 1px;
 }
@@ -1656,7 +1662,7 @@ section
 }
 .register_col:nth-child(even)
 {
-	/*padding-left: 0px;*/
+	padding-left: 7px;
 }
 .form_input
 {
@@ -1665,6 +1671,7 @@ section
 	background: transparent;
 	border: none;
 	outline: none;
+	color: black;
 	border-bottom: solid 1px #b2b2b2;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
@@ -1675,89 +1682,10 @@ section
 .form_input:hover,
 .form_input:focus
 {
-	border-bottom: solid 2px #2e21df;
+	border: solid 2px #ABE2FB;
 }
-.form_input::-webkit-input-placeholder
-{
-	font-size: 14px !important;
-	font-weight: 600 !important;
-	color: rgba(0,0,0,0.4) !important;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.form_input:-moz-placeholder
-{
-	font-size: 14px !important;
-	font-weight: 600 !important;
-	color: rgba(0,0,0,0.4) !important;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.form_input::-moz-placeholder
-{
-	font-size: 14px !important;
-	font-weight: 600 !important;
-	color: rgba(0,0,0,0.4) !important;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-} 
-.form_input:-ms-input-placeholder
-{ 
-	font-size: 14px !important;
-	font-weight: 600 !important;
-	color: rgba(0,0,0,0.4) !important;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-.form_input::input-placeholder
-{
-	font-size: 14px !important;
-	font-weight: 600 !important;
-	color: rgba(0,0,0,0.4) !important;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-}
-/*Input Hover*/
-.form_input:hover::-webkit-input-placeholder,
-.form_input:focus::-webkit-input-placeholder
-{
-	color: rgba(0,0,0,0.8) !important;
-}
-.form_input:hover:-moz-placeholder,
-.form_input:focus:-moz-placeholder
-{
-	color: rgba(0,0,0,0.8) !important;
-}
-.form_input:hover::-moz-placeholder,
-.form_input:focus::-moz-placeholder
-{
-	color: rgba(0,0,0,0.8) !important;
-} 
-.form_input:hover:-ms-input-placeholder,
-.form_input:focus:-ms-input-placeholder
-{ 
-	color: rgba(0,0,0,0.8) !important;
-}
-.form_input:hover::input-placeholder,
-.form_input:focus::input-placeholder
-{
-	color: rgba(0,0,0,0.8) !important;
-}
+
+
 .form_button
 {
 	width: 100%;
@@ -1812,7 +1740,7 @@ section
 .register_timer_container
 {
 	/*padding-left: 68px;*/
-	top: 50%;
+	top: 38%;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
@@ -2228,7 +2156,7 @@ section
 {
 	font-size: 14px !important;
 	font-weight: 600 !important;
-	color: rgba(255,255,255,0.4) !important;
+	color: black !important;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -2239,7 +2167,7 @@ section
 {
 	font-size: 14px !important;
 	font-weight: 600 !important;
-	color: rgba(255,255,255,0.4) !important;
+	color: black !important;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -2250,7 +2178,7 @@ section
 {
 	font-size: 14px !important;
 	font-weight: 600 !important;
-	color: rgba(255,255,255,0.4) !important;
+	color: black !important;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -2261,7 +2189,7 @@ section
 { 
 	font-size: 14px !important;
 	font-weight: 600 !important;
-	color: rgba(255,255,255,0.4) !important;
+	color: black !important;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -2272,7 +2200,7 @@ section
 {
 	font-size: 14px !important;
 	font-weight: 600 !important;
-	color: rgba(255,255,255,0.4) !important;
+	color: black !important;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -2284,27 +2212,27 @@ section
 .newsletter_input:hover::-webkit-input-placeholder,
 .newsletter_input:focus::-webkit-input-placeholder
 {
-	color: rgba(255,255,255,1) !important;
+	color: black !important;
 }
 .newsletter_input:hover:-moz-placeholder,
 .newsletter_input:focus:-moz-placeholder
 {
-	color: rgba(255,255,255,1) !important;
+	color: black !important;
 }
 .newsletter_input:hover::-moz-placeholder,
 .newsletter_input:focus::-moz-placeholder
 {
-	color: rgba(255,255,255,1) !important;
+	color: black !important;
 } 
 .newsletter_input:hover:-ms-input-placeholder,
 .newsletter_input:focus:-ms-input-placeholder
 { 
-	color: rgba(255,255,255,1) !important;
+	color: black !important;
 }
 .newsletter_input:hover::input-placeholder,
 .newsletter_input:focus::input-placeholder
 {
-	color: rgba(255,255,255,1) !important;
+	color: black !important;
 }
 .newsletter_button
 {

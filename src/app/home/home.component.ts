@@ -90,7 +90,6 @@ export class HomeComponent implements OnInit {
     },400);
     this.commonService.getevents().subscribe(res=>{
       this.response=res
-      console.log(this.response)
       this.upcoming(this.response);
     })
     this.commonService.getUniversitiesData().subscribe(res=>{
@@ -100,6 +99,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  
   getcountry(){
     var country=this.response2.map(i=>{
       return (i.location);
