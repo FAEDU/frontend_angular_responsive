@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
     "Password": "",
     "repeatPassword":'',
     "contactNo":'',
-    "remember": false
+    "remember": true
   } 
   response:any;
   showPage :boolean= true;
@@ -141,7 +141,7 @@ export class HeaderComponent implements OnInit {
         console.log(result);
         this.response = result;
         this.loaderService.display(false);
-        this.router.navigate(['/login/student']);
+        this.router.navigate(['/dashboard']);
         },
         (error)=>{
           console.log(error);
@@ -162,7 +162,7 @@ export class HeaderComponent implements OnInit {
       console.log(result);
       this.response = result;
       this.loaderService.display(false);
-      this.router.navigate(['/login/mentor']);
+      this.router.navigate(['/dashboard']);
       },
       (error)=>{
         console.log(error);

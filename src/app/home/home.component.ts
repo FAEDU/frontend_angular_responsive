@@ -205,4 +205,11 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl(`/universitydetail/${u.id}/${u.imageUrl}`)
   }
 
+  check(){
+    if(localStorage.getItem('loggedIn') === null)
+      alert('You need to login');
+    else
+      this.router.navigateByUrl('/dashboard');
+  }
+
 }
