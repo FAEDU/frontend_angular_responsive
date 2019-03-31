@@ -1,0 +1,189 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Fadmit</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="assets/images/logo.png"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"><!-- Latest compiled JavaScript --><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script><script src="//code.jquery.com/jquery-1.11.1.min.js"></script><!--@import url('/assets/plugins/OwlCarousel2-2.2.1/animate.css');
+@import url('/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css');
+@import url('/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css');
+@import url('/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css');
+@import url('/assets/styles/bootstrap4/bootstrap.min.css');
+@import url('/assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css');--><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/AjaxLoader.gif"><link rel="stylesheet" href="/node_modules/owl.carousel/dist/assets/owl.carousel.min.css"/><link rel="stylesheet" type="text/css" href="~bootstrap/dist/css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css"><link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css"><link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/animate.css"><link href="assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="/assets/styles/main_styles.css"><link rel="stylesheet" type="text/css" href="/assets/styles/responsive.css"><link rel="stylesheet" type="text/css" href="/assets/styles/bootstrap4/bootstrap.min.css"><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"><!-- <link rel="stylesheet" type="text/scss" href="assets/scss/common/global.scss">
+<link rel="stylesheet" type="text/scss" href="assets/scss/layouts/main.scss"> --><!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --><!-- <link rel="stylesheet" type="text/css" href="assets/styles/blog.css"> 
+<link rel="stylesheet" type="text/css" href="assets/styles/blog_responsive.css">
+<link rel="stylesheet" type="text/css" href="assets/styles/additional.css">
+<link rel="stylesheet" type="text/css" href="assets/styles/contact.css">
+<link rel="stylesheet" type="text/css" href="assets/styles/contact_responsive.css"> --><!-- Fontfaces CSS--><!-- <link rel="stylesheet" href="assets/fonts/material-icon/css/material-design-iconic-font.min.css">
+  <link  href="assets/css/font-face_dash.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" type="text/css">
+
+  
+  <link href="assets/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" type="text/css"> --><!-- Vendor CSS--><!-- <link href="assets/vendor/animsition/animsition.min.css" rel="stylesheet" type="text/css"> --><!-- <link href="assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/wow/animate.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/slick/slick.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/select2/select2.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" type="text/css"> --><!-- Main CSS--><!-- <link href="assets/css/theme_dash.css" rel="stylesheet" type="text/css"> --><!-- Animation CSS--><!-- <link href="assets/css/animate_dash.css" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+   --><!-- <script src="js/wow.min.js"></script>
+            <script>
+            new WOW().init();
+            </script> --><script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script><script src="assets/js/custom.js"></script><script src="assets/vendor/jquery/jquery.min.js"></script><!-- Range Slider Script (Tution Fee)--><script>var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value;
+
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+
+
+
+  (function ($) {
+  // USE STRICT
+  "use strict";
+
+  // Dropdown
+  try {
+    var menu = $('.js-item-menu');
+    var sub_menu_is_showed = -1;
+
+    for (var i = 0; i < menu.length; i++) {
+      $(menu[i]).on('click', function (e) {
+        e.preventDefault();
+        $('.js-right-sidebar').removeClass("show-sidebar");
+        if (jQuery.inArray(this, menu) == sub_menu_is_showed) {
+          $(this).toggleClass('show-dropdown');
+          sub_menu_is_showed = -1;
+        }
+        else {
+          for (var i = 0; i < menu.length; i++) {
+            $(menu[i]).removeClass("show-dropdown");
+          }
+          $(this).toggleClass('show-dropdown');
+          sub_menu_is_showed = jQuery.inArray(this, menu);
+        }
+      });
+    }
+    $(".js-item-menu, .js-dropdown").click(function (event) {
+      event.stopPropagation();
+    });
+
+    $("body,html").on("click", function () {
+      for (var i = 0; i < menu.length; i++) {
+        menu[i].classList.remove("show-dropdown");
+      }
+      sub_menu_is_showed = -1;
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
+
+  var wW = $(window).width();
+    // Right Sidebar
+    var right_sidebar = $('.js-right-sidebar');
+    var sidebar_btn = $('.js-sidebar-btn');
+
+    sidebar_btn.on('click', function (e) {
+      e.preventDefault();
+      for (var i = 0; i < menu.length; i++) {
+        menu[i].classList.remove("show-dropdown");
+      }
+      sub_menu_is_showed = -1;
+      right_sidebar.toggleClass("show-sidebar");
+    });
+
+    $(".js-right-sidebar, .js-sidebar-btn").click(function (event) {
+      event.stopPropagation();
+    });
+
+    $("body,html").on("click", function () {
+      right_sidebar.removeClass("show-sidebar");
+
+    });
+
+
+  // Sublist Sidebar
+  try {
+    var arrow = $('.js-arrow');
+    arrow.each(function () {
+      var that = $(this);
+      that.on('click', function (e) {
+        e.preventDefault();
+        that.find(".arrow").toggleClass("up");
+        that.toggleClass("open");
+        that.parent().find('.js-sub-list').slideToggle("250");
+      });
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
+
+
+  try {
+    // Hamburger Menu
+    $('.hamburger').on('click', function () {
+      $(this).toggleClass('is-active');
+      $('.navbar-mobile').slideToggle('500');
+    });
+    $('.navbar-mobile__list li.has-dropdown > a').on('click', function () {
+      var dropdown = $(this).siblings('ul.navbar-mobile__dropdown');
+      $(this).toggleClass('active');
+      $(dropdown).slideToggle('500');
+      return false;
+    });
+  } catch (error) {
+    console.log(error);
+  }
+})(jQuery);
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}</script><script>// Get the modal
+var modal = document.getElementById('studentloginmodal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "blocks";
+    }
+}
+var modal = document.getElementById('mentorloginmodal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "blocks";
+
+    }
+}
+var modal = document.getElementById('studentsignupmodal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "blocks";
+
+    }
+}</script><!-- Jquery JS--><script src="assets/vendor/jquery-3.2.1.min.js"></script><!-- Bootstrap JS--><script src="assets/vendor/bootstrap-4.1/popper.min.js"></script><script src="assets/vendor/bootstrap-4.1/bootstrap.min.js"></script><!-- Vendor JS       --><script src="assets/vendor/slick/slick.min.js"></script><script src="assets/vendor/wow/wow.min.js"></script><script src="assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script><script src="assets/vendor/counter-up/jquery.waypoints.min.js"></script><script src="assets/vendor/counter-up/jquery.counterup.min.js"></script><script src="assets/vendor/circle-progress/circle-progress.min.js"></script><script src="assets/vendor/perfect-scrollbar/perfect-scrollbar.js"></script><script src="assets/vendor/chartjs/Chart.bundle.min.js"></script><script src="assets/vendor/select2/select2.min.js"></script></head><app-root></app-root><!-- page-wrapper --><script type="text/javascript" src="inline.c355ee233ae713d1fdfd.bundle.js"></script><script type="text/javascript" src="polyfills.fd3e3bd51865ca73fc3a.bundle.js"></script><script type="text/javascript" src="vendor.746e3543f2fb6ec27b23.bundle.js"></script><script type="text/javascript" src="main.251166cbc3fc4d0839f0.bundle.js"></script><script></script></html>

@@ -117,7 +117,7 @@ export class CoursesComponent implements OnInit {
     console.log(id,img);
     console.log(localStorage.getItem('Id'));
     if(localStorage.getItem('id')===null)
-      this.router.navigateByUrl('/login/student');
+      alert("You need to login");
     else
       this.router.navigateByUrl(`/universitydetail/${id}/${img}`)
   }
