@@ -15,7 +15,6 @@ export class GoogleloginComponent implements OnInit {
       localStorage.setItem('email',this.route.snapshot.paramMap.get('email'))
       localStorage.setItem('name',this.route.snapshot.paramMap.get('name'));
       localStorage.setItem('id',this.route.snapshot.paramMap.get('id'));
-      localStorage.setItem('loggedIn','student');
       this.router.navigate(['/dashboard/university']);
   }
 }

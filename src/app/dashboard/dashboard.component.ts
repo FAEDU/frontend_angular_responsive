@@ -35,10 +35,10 @@ export class DashboardComponent implements OnInit {
     if(this.isStudent)
     {
       console.log('logout for student');
-      this.router.navigateByUrl('login/student');
+      this.router.navigateByUrl('/');
     }
     else{
-      this.router.navigateByUrl('/login/mentor');
+      this.router.navigateByUrl('/');
     }
     localStorage.clear();
   }

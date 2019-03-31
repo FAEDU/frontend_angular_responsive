@@ -112,19 +112,19 @@
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <input type="text" placeholder="Enter Username" [(ngModel)]="details.email" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" [(ngModel)]="details.password" name="psw" required>
         
-      <button class="button1" type="submit" style="margin-bottom: 15px;">Login</button>
-      <span style="float: left;"><a href="#" class="Forgot">Forget Password?</a></span>
+      <button class="button1" type="submit" style="margin-bottom: 15px;"(click)="login('student')">Login</button>
+      <span style="float: left;"><a (click)="reset('student')" class="Forgot">Forget Password?</a></span>
       <label style="float: right;color: black">
         <input type="checkbox" name="remember" style="height: 15px;width: 15px;color: black"> Remember me
       </label>
     </div>
     <div style="text-align: center;">
-      Login With <a href=""> <img style="width: 6%;margin-left: 5px;color: black" src="assets/images/download.png"></a>
+      Login With <a href="https://secret-atoll-46665.herokuapp.com/google/login" (click)="set('student')"> <img style="width: 6%;margin-left: 5px;color: black" src="assets/images/download.png"></a>
     </div>
 
     <div class="container1" >
@@ -149,23 +149,23 @@
 
     <div class="container">
       <label for="uname"><b>Name</b></label>
-      <input type="text" placeholder="Name" name="uname" required>
+      <input type="text" placeholder="Name" [(ngModel)]="details_reg.Name" name="uname" required>
 
       <label for="uname"><b>Contact No.</b></label>
-      <input type="text" placeholder="Contact No." name="uname" required>
+      <input type="text" placeholder="Contact No." [(ngModel)]="details_reg.contactNo" name="uname" required>
 
       <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Username" name="uname" required>
+      <input type="text" placeholder="Username" [(ngModel)]="details_reg.email" name="uname" required>
 
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Password" name="psw" required>
+      <input type="password" placeholder="Password" [(ngModel)]="details_reg.Password" name="psw" required>
 
 
       <label for="psw"><b>Confirm Password</b></label>
-      <input type="password" placeholder="Confirm Password" name="psw" required>
+      <input type="password" placeholder="Confirm Password" [(ngModel)]="details_reg.repeatPassword" name="psw" required>
         
-      <button class="button1" type="submit">Register</button>
+      <button class="button1" type="submit" (click)="reg('student')">Register</button>
     
     </div>
 
@@ -196,8 +196,8 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button class="button1" type="submit">Login</button>
-      <span style="float: left;"><a href="#" class="Forgot">Forget Password?</a></span>
+      <button class="button1" type="submit"(click)="login('mentor')">Login</button>
+      <span style="float: left;"><a class="Forgot"(click)="reset('mentor')">Forget Password?</a></span>
       <label style="float: right;color: black">
         <input type="checkbox" name="remember" style="height: 15px;width: 15px;"> Remember me
       </label>
@@ -245,7 +245,7 @@
       <label for="psw"><b>Confirm Password</b></label>
       <input type="password" placeholder="Confirm Password" name="psw" required>
         
-      <button class="button1" type="submit">Login</button>
+      <button class="button1" type="submit" (click)="reg('mentor')">Login</button>
       
     </div>
 
