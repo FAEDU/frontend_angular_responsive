@@ -71,9 +71,9 @@ export class CommonService {
 
     }
 
-    notify(email){
+    notify(email,name){
         console.log(email);
-        return this.http.get(`https://secret-atoll-46665.herokuapp.com/sendemailtostudent/${email}`)
+        return this.http.get(`https://secret-atoll-46665.herokuapp.com/sendemailtostudent/${email}/${name}`);
     }
 
     reset(email,string){
