@@ -141,6 +141,9 @@ export class HeaderComponent implements OnInit {
         console.log(result);
         this.response = result;
         this.loaderService.display(false);
+        localStorage.setItem('loggedIn', 'student');
+        localStorage.setItem('id',this.response.id);
+        localStorage.setItem('name', this.response.Name);
         this.router.navigate(['/dashboard/university']);
         },
         (error)=>{
@@ -162,7 +165,10 @@ export class HeaderComponent implements OnInit {
       console.log(result);
       this.response = result;
       this.loaderService.display(false);
-      this.router.navigate(['/dashboard/university']);
+      localStorage.setItem('loggedIn', 'mentor');
+      localStorage.setItem('id',this.response.id);
+      localStorage.setItem('name', this.response.Name);
+      this.router.navigate(['/dashboard/profile']);
     },
       (error)=>{
        alert('Password does not match');
