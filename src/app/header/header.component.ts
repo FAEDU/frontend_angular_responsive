@@ -141,7 +141,7 @@ export class HeaderComponent implements OnInit {
         console.log(result);
         this.response = result;
         this.loaderService.display(false);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/university']);
         },
         (error)=>{
           console.log(error);
@@ -162,8 +162,8 @@ export class HeaderComponent implements OnInit {
       console.log(result);
       this.response = result;
       this.loaderService.display(false);
-      this.router.navigate(['/dashboard']);
-      },
+      this.router.navigate(['/dashboard/university']);
+    },
       (error)=>{
        alert('Password does not match');
       }
