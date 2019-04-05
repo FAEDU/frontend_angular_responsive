@@ -31,16 +31,16 @@ export class DashboardComponent implements OnInit {
   logout()
   {
     console.log('logout');
-   
+    localStorage.clear();
     if(this.isStudent)
     {
       console.log('logout for student');
-      this.router.navigateByUrl('/');
+      this.router.navigate(['/home']);
+
     }
     else{
-      this.router.navigateByUrl('/');
+      this.router.navigate(['/home']);
     }
-    localStorage.clear();
   }
   shownavbar(){
     this.navbar=false;

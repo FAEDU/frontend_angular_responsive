@@ -33,7 +33,7 @@ export class ContactComponent implements OnInit {
     this.commonService.contactForm(this.detail).subscribe((result)=>{
       console.log(result);
       this.loaderService.display(false);
-      this.commonService.notify(this.detail.emailID,this.detail.name).subscribe(res=>{
+      this.commonService.notify(this.detail.emailID).subscribe(res=>{
         console.log(res)
         this.detail.name = '';
         this.detail.emailID ='';

@@ -166,7 +166,7 @@ export class HomeComponent implements OnInit {
     else{
     this.commonService.scoreForm(this.detail).subscribe((result)=>{
       this.loaderService.display(false);
-      this.commonService.notify(this.detail.Email,this.detail.Name).subscribe(res=>{
+      this.commonService.notify(this.detail.Email).subscribe(res=>{
         console.log(res);
           this.detail.Name ='';
           this.detail.Email ='';

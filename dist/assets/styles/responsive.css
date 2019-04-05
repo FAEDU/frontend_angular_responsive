@@ -247,11 +247,18 @@
 
 @media only screen and (max-width: 767px)
 {
+	.heading
+	{
+		font-size: 30px;
+		margin-top: 10%;
+		font-weight: 600;
+	}
 
 	.footermiddle
 	{
 		float: none !important;
 		text-align: center;
+		margin-top: 5%;
 	}
 	.footermiddleicon
 	{
@@ -283,8 +290,8 @@ box-shadow: -2px -1px 48px -1px rgba(0,0,0,0.75);
 	.phead
 	{
 		font-family: 'Poppins', sans-serif;
-		font-size: 15px;
-		font-weight: 700;
+		font-size: 30px;
+		font-weight: 600;
 	}
 	.imsize
 	{
@@ -307,12 +314,12 @@ box-shadow: -2px -1px 48px -1px rgba(0,0,0,0.75);
 }
 	#flogo
 	{
-		margin-left: 50%;
+		margin-left: 43.5%;
 		visibility: visible;
 	}
 	.logo_container
 	{
-		width: 100px;
+		width: 100%;
 	}
 
 	.logo_text_nav
@@ -476,7 +483,7 @@ box-shadow: -2px -1px 48px -1px rgba(0,0,0,0.75);
 	}
 	.menu_social
 	{
-		margin-top: -20px;
+		margin-top: -5px;
 	}
 	.home
 	{

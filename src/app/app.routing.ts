@@ -28,13 +28,14 @@ import { EventsComponent } from './events/events.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { NotloggeddashboardComponent } from './notloggeddashboard/notloggeddashboard.component';
-
+import { Buycourse1Component } from './instructors/buycourse1/buycourse1.component';
 
  
 export const AppRoutes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
   //  { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
+    { path: 'buycourse', component: Buycourse1Component },
     { path: 'blog', component: BlogComponent },
     { path: 'courses', component: CoursesComponent },
     { path: 'contact', component: ContactComponent },

@@ -944,9 +944,12 @@ section
 }
 .menu_extra
 {
-	position: absolute;
-	left: -2%;
-	bottom: 30px;
+	position: fixed;
+    /* bottom: 20px; */
+    /* margin-top: 45%; */
+    /* text-align: center; */
+    /* margin: 0 auto; */
+    width: 90%;
 }
 .menu_phone,
 .menu_social
@@ -958,7 +961,7 @@ section
 {
 	margin-right: -6px;
 	margin-top: 5px;
-	left: 200px;
+	
 }
 .menu_title
 {
@@ -1038,7 +1041,7 @@ section
 	font-family: 'Montserrat', sans-serif;
 	font-size: 12px;
 	text-transform: uppercase;
-	color: #FFFFFF;
+	color: #FFFFFF!important;
 	font-weight: 600;
 	line-height: 43px;
 	letter-spacing: 0.3em;
@@ -1648,6 +1651,11 @@ section
 	font-weight: 700;
 	color: rgba(0,0,0,0.9);
 }
+.heading
+{
+	margin-top:4%;
+	font-size: 35px;
+}
 .register_row
 {
 	margin-top: 38px;
@@ -1662,14 +1670,14 @@ section
 }
 .register_col:nth-child(even)
 {
-	padding-left: 7px;
+	padding-right: 0px;
 }
 .form_input
 {
 	width: 100%;
 	height: 36px;
 	background: transparent;
-	border: none;
+	
 	outline: none;
 	color: black;
 	border-bottom: solid 1px #b2b2b2;
@@ -1701,7 +1709,7 @@ section
 	outline: none;
 	cursor: pointer;
 	border-radius: 3px;
-	margin-top: 5px;
+	margin-bottom: 15px;
 }
 .form_button:hover
 {
@@ -2387,7 +2395,7 @@ section
 *********************************/
 .imsize
 {
-	max-width: 50% !important;
+	max-width: 90% !important;
 }
 .pimg1{
 	margin: 2vh auto;

@@ -10,6 +10,9 @@ declare let paypal: any;
 })
 export class InstructorsComponent implements AfterViewChecked {
 
+  detail={
+    "email":""
+  }
 
   addScript: boolean = false;
   paypalLoad: boolean = true;
@@ -62,6 +65,17 @@ export class InstructorsComponent implements AfterViewChecked {
       scripttagElement.onload = resolve;
       document.body.appendChild(scripttagElement);
     })
+  }
+
+  add_to_cart(){
+    console.log("yes");
+    if(this.detail.email !== ""){
+      console.log(this.detail.email);
+      document.getElementById('checkoutmodal_11').style.display='block';
+      document.getElementById('purchasemodal_11').style.display='none';
+    }
+    else
+      alert('Email should be given');
   }
 
 }

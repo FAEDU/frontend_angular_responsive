@@ -87,22 +87,27 @@
     </nav>
     <div class="menu_extra">
       <div class="menu_phone"><span class="menu_title">phone:</span>+91 1234567890</div>
+      <br>
       <div class="menu_social">
         <span class="menu_title">follow us</span>
         <ul>
           <li><a href="https://wa.me/919170672439?text=Hello!%0AI%20need%20help%20with%20abroad%20studies."><i style="color: lightgreen;" class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
           <li><a href=" https://www.facebook.com/foreignadmits/"><i style="color: blue;" class="fa fa-facebook" aria-hidden="true"></i></a></li>
           <li><a href="https://www.instagram.com/foreignadmits"><i style="color:red" class="fa fa-instagram" aria-hidden="true"></i></a></li>
+         
           <li><a href="https://twitter.com/foreignadmits"><i style="color: skyblue;" class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.linkedin.com/company/foreignadmits"> <i style="color: #0590B8" class="fa fa-linkedin footericon" aria-hidden="true"></i></a></li>
+
           <!-- <li><a href="https://www.linkedin.com/company/foreignadmits"><i style="color: #0590B8;" class="fa fa-linkedin" aria-hidden="true"></i></a></li> -->
         </ul>
       </div>
+      
     </div>
   </div>
 
 <!-- Student Login Modal Start-->
 
-<div id="studentloginmodal" class="modal">
+<div id="studentloginmodal" class="modal" style="position: fixed;">
   
   <form class="modal-content animate" action="/action_page.php">
     <div class="imgcontainer">
@@ -130,7 +135,7 @@
     <div class="container1" >
       <button  type="button" onclick="document.getElementById('studentloginmodal').style.display='none'" class="cancelbtn button1">Cancel</button>
       <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-     <a style="cursor: pointer;" onclick="document.getElementById('studentregisterationmodal').style.display='block'"> <span  style="float:right;padding: 15px;color: black">New User?</span></a>
+     <a style="cursor: pointer;" onclick="document.getElementById('studentregisterationmodal').style.display='block',document.getElementById('studentloginmodal').style.display='none'"> <span  style="float:right;padding: 15px;color: black">New User?</span></a>
     </div>
   </form>
 </div>
@@ -139,7 +144,7 @@
 
 <!-- Student Registration Modal Start-->
 
-<div id="studentregisterationmodal" class="modal">
+<div id="studentregisterationmodal" class="modal"  style="position: fixed;">
   
   <form class="modal-content animate" action="/action_page.php">
     <div class="imgcontainer">
@@ -181,7 +186,7 @@
 
 <!-- Mentor Login Modal Start-->
 
-<div id="mentorloginmodal" class="modal">
+<div id="mentorloginmodal" class="modal"  style="position: fixed;">
   
   <form class="modal-content animate" action="/action_page.php">
     <div class="imgcontainer">
@@ -203,13 +208,13 @@
       </label>
     </div>
      <div style="text-align: center;">
-      Login With <a href=""> <img style="width: 6%;margin-left: 5px;" src="assets/images/download.png"></a>
+      Login With <a href="https://secret-atoll-46665.herokuapp.com/google/login" (click)="set('mentor')"> <img style="width: 6%;margin-left: 5px;" src="assets/images/download.png"></a>
     </div>
 
     <div class="container1" >
       <button  type="button" onclick="document.getElementById('mentorloginmodal').style.display='none'" class="cancelbtn button1">Cancel</button>
       <!-- <span class="psw">Forgot <a href="#">password?</a></span> -->
-      <a style="cursor: pointer;" onclick="document.getElementById('mentorregisterationmodal').style.display='block'"> <span  style="float:right;padding: 15px;color: black">New User?</span></a>
+      <a style="cursor: pointer;" onclick="document.getElementById('mentorregisterationmodal').style.display='block',document.getElementById('mentorloginmodal').style.display='none'"> <span  style="float:right;padding: 15px;color: black">New User?</span></a>
     </div>
   </form>
 </div>
@@ -219,7 +224,7 @@
 
 <!-- Mentor Registration Modal Start-->
 
-<div id="mentorregisterationmodal" class="modal">
+<div id="mentorregisterationmodal" class="modal"  style="position: fixed;">
   
   <form class="modal-content animate" action="/action_page.php">
     <div class="imgcontainer">

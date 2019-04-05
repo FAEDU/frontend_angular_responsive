@@ -39,6 +39,7 @@ import { EventsComponent } from './events/events.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
 import { InstructorComponent } from './instructor/instructor.component';
 import { NotloggeddashboardComponent } from './notloggeddashboard/notloggeddashboard.component';
+import { Buycourse1Component } from './instructors/buycourse1/buycourse1.component';
 
 
 
@@ -75,7 +76,8 @@ import { NotloggeddashboardComponent } from './notloggeddashboard/notloggeddashb
     EventsComponent,
     ResetpassComponent,
     InstructorComponent,
-    NotloggeddashboardComponent
+    NotloggeddashboardComponent,
+    Buycourse1Component
   ],
   imports: [
     BrowserModule, 
