@@ -153,8 +153,8 @@ export class HeaderComponent implements OnInit {
       }
       }
       else{
-        if(this.details_reg.repeatPassword === this.details_reg.Password)
-    {
+      if(this.details_reg.repeatPassword === this.details_reg.Password)
+      {
       delete this.details_reg.repeatPassword;
       delete this.details_reg.remember;
       this.loaderService.display(true);
@@ -165,7 +165,7 @@ export class HeaderComponent implements OnInit {
       this.router.navigate(['/dashboard']);
       },
       (error)=>{
-        console.log(error);
+       alert('Password does not match');
       }
       )   
     }

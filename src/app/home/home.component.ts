@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
    
 
   ngOnInit() {
-
+    
     this.http.get('https://secret-atoll-46665.herokuapp.com/topuniversity').subscribe(res=>{
       this.university=res;
       console.log(this.university);
