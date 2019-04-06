@@ -42,10 +42,12 @@ export class HomeComponent implements OnInit {
     Name :'',
     Email : '',
     Phone : '',
-    Degree:'',
-    Score:'',
+    GRE_Verbal:'',
     Term:'',
-    Year:''
+    GRE_Quant:'',
+    IELTS:'',
+    TOEFL:'',
+    GPA:'',
   }
   constructor(private http:HttpClient,private commonService :CommonService, private loaderService: LoaderService,private router:Router) {
     this.commonService.showHeadernFooter(true);
@@ -171,10 +173,12 @@ export class HomeComponent implements OnInit {
           this.detail.Name ='';
           this.detail.Email ='';
           this.detail.Phone ='';
-          this.detail.Degree='';
-          this.detail.Score="";
           this.detail.Term='';
-          this.detail.Year='';
+          this.detail.GRE_Quant='';
+          this.detail.GRE_Verbal='';
+          this.detail.IELTS='';
+          this.detail.TOEFL='';
+          this.detail.GPA='';
         alert("Thanks for contacting us we will get back to you of your dream university withing 24 hours");
       })
     })

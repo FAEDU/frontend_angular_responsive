@@ -67,7 +67,7 @@
 								  </div> -->
 							</div>
 							<div   class="col-lg-6 register_col">
-											<select class="form_input" name="country" [(ngModel)]="detail.Degree">
+											<select class="form_input" name="country" [(ngModel)]="detail.Term">
 												<option value=''>Select Your Term</option>
 												<option value="GRE"> Fall 2019 </option>
 										<option value="GRE">Spring 2019</option>
@@ -84,19 +84,19 @@
 											</select>
 							</div>
 															<div  class="col-lg-6 register_col">
-																<input type="text" class="form_input" [(ngModel)]="detail.Phone" name ="query" placeholder="Enter Your GRE Verbal Score" #phone="ngModel" required>
+																<input type="text" class="form_input" [(ngModel)]="detail.GRE_Verbal" name ="query" placeholder="Enter Your GRE Verbal Score" #phone="ngModel" required>
 									</div>
 									<div  class="col-lg-6 register_col">
-																<input type="text" class="form_input" [(ngModel)]="detail.Phone" name ="query" placeholder="Enter Your GRE Quant Score" #phone="ngModel" required>
+																<input type="text" class="form_input" [(ngModel)]="detail.GRE_Quant" name ="query" placeholder="Enter Your GRE Quant Score" #phone="ngModel" required>
 									</div>
 									<div  class="col-lg-6 register_col">
-																<input type="text" class="form_input" [(ngModel)]="detail.Phone" name ="query" placeholder="Enter Your IELTS Score" #phone="ngModel" required>
+																<input type="text" class="form_input" [(ngModel)]="detail.IELTS" name ="query" placeholder="Enter Your IELTS Score" #phone="ngModel" required>
 									</div>
 									<div  class="col-lg-6 register_col">
-																<input type="text" class="form_input" [(ngModel)]="detail.Phone" name ="query" placeholder="Enter Your Tofel Score" #phone="ngModel" required>
+																<input type="text" class="form_input" [(ngModel)]="detail.TOEFL" name ="query" placeholder="Enter Your Tofel Score" #phone="ngModel" required>
 									</div>
 									<div  class="col-lg-6 register_col">
-																<input type="text" class="form_input" [(ngModel)]="detail.Phone" name ="query" placeholder="Enter Your GPA" #phone="ngModel" required>
+																<input type="text" class="form_input" [(ngModel)]="detail.GPA" name ="query" placeholder="Enter Your GPA" #phone="ngModel" required>
 									</div>
 							<div class="col">
 								<button type="submit"  [disabled]="!homeForm.form.valid" (click)="submit()" class="form_button trans_200">find out now</button>

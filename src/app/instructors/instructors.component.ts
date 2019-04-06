@@ -1,4 +1,5 @@
 import { Component, OnInit,AfterViewChecked } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 declare let paypal: any;
 
@@ -8,7 +9,7 @@ declare let paypal: any;
   templateUrl: './instructors.component.html',
   styleUrls: ['./instructors.component.css']
 })
-export class InstructorsComponent implements AfterViewChecked {
+export class InstructorsComponent implements OnInit,AfterViewChecked {
 
   detail={
     "email":""
@@ -42,6 +43,16 @@ export class InstructorsComponent implements AfterViewChecked {
     }
   };
 
+  constructor(private http:HttpClient){
+
+  }
+
+  ngOnInit(){
+
+  }
+
+  
+
   price_clicked(price){
     this.finalAmount=price;
     this.ngAfterViewChecked();
@@ -67,12 +78,15 @@ export class InstructorsComponent implements AfterViewChecked {
     })
   }
 
-  add_to_cart(){
+  add_to_cart(item){
     console.log("yes");
     if(this.detail.email !== ""){
       console.log(this.detail.email);
-      document.getElementById('checkoutmodal_11').style.display='block';
-      document.getElementById('purchasemodal_11').style.display='none';
+      this.http.get(`https://secret-atoll-46665.herokuapp.com/purchase_email/${this.detail.email}`).subscribe(res=>{
+        console.log(res);
+      })
+      document.getElementById(`checkoutmodal_${item}`).style.display='block';
+      document.getElementById(`purchasemodal_${item}`).style.display='none';
     }
     else
       alert('Email should be given');
