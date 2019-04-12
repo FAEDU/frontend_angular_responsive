@@ -1098,6 +1098,7 @@ section
 	padding-bottom: 50px;
 	background: #f8f8f8;
 	padding-top: 0px;
+	min-height: calc( 100vh - 300px);
 }
 .course_col1
 {

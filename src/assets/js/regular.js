@@ -93,6 +93,7 @@ $(document).ready(function()
 			{
 				burger.on('click', function()
 				{
+					alert('okay');
 					if(menuActive)
 					{
 						closeMenu();

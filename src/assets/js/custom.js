@@ -90,12 +90,15 @@ $(document).ready(function()
 
 	function initMenu()
 	{
-		if($('.menu').length)
+		var body = $( 'body' );
+		if(body.find('.menu').length)
 		{
-			var menu = $('.menu');
-			if($('.hamburger').length)
+			var menu = body.find('.menu');
+			if(body.find('.hamburger').length)
 			{
-				burger.on('click', function()
+
+				// alert( 'okay' );
+				/*burger.on('click', function()
 				{
 					if(menuActive)
 					{
@@ -117,7 +120,7 @@ $(document).ready(function()
 							}
 						});
 					}
-				});
+				});*/
 			}
 		}
 	}

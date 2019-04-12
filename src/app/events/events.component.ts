@@ -5,7 +5,13 @@ import { filter } from 'rxjs/operator/filter';
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
-  styleUrls: ['./events.component.css']
+  styleUrls: ['./events.component.css'],
+  styles: [`.heading {
+
+      margin-top: 25%;
+text-align: center;
+
+}`]
 })
 export class EventsComponent implements OnInit {
   public events;

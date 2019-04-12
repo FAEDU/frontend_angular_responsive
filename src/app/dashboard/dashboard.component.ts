@@ -35,11 +35,11 @@ export class DashboardComponent implements OnInit {
     if(this.isStudent)
     {
       console.log('logout for student');
-      this.router.navigateByUrl('/');
+      this.router.navigate(['/home']);
 
     }
     else{
-      this.router.navigateByUrl('/');
+      this.router.navigate(['/home']);
     }
   }
   shownavbar(){

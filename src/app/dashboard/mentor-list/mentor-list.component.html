@@ -98,7 +98,7 @@
                 <div class="col-lg-12"><!--Apply Match Parent Width-->
                         <div class="card-body card-block">
                             <div class="has-success form-group">
-                                <label for="inputIsValid" class=" form-control-label">Time of Appointment</label>
+                                <label for="inputIsValid" class=" form-control-label">Time of Appointment </label>
                                 <input required type="time" id="inputIsValid" [(ngModel)]="modal.Time" class="is-valid form-control-success form-control">
                             </div>
                             <div class="has-warning form-group">
@@ -111,12 +111,13 @@
             </div>
                       <div class="modal-footer">
                           <button onclick="document.getElementById('id01').style.display='none'" id= "closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                          <button type="button" (click)="submit()" class="btn btn-primary">Confirm</button>
+                          <button type="button" (click)="save()" class="btn btn-primary">Confirm</button>
                       </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -145,7 +146,7 @@
             </div>
             <div class="modal-footer">
                 <button id="closebutton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" (click)="submit()" class="btn btn-primary">Confirm</button>
+                <button type="button" (click)="save()" class="btn btn-primary">Confirm</button>
             </div>
         </div>
     </div>

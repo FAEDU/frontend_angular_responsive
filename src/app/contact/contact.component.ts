@@ -1,10 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { CommonService, LoaderService } from '../services/common.service';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 declare var google: any;
+declare var jquery:any;
+declare var $ :any;
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  styleUrls: ['./contact.component.css'],
+  // encapsulation: ViewEncapsulation.None
 })
 export class ContactComponent implements OnInit {
   map : any;
@@ -16,7 +21,9 @@ export class ContactComponent implements OnInit {
     Purpose:'',
     Description:''
   }
-  constructor(private commonService : CommonService, private loaderService : LoaderService) { }
+  constructor(private http:HttpClient,private commonService : CommonService, private loaderService: LoaderService,private router:Router) {
+    this.commonService.showHeadernFooter(true);
+  }
 
   ngOnInit() {
    // this.initMap();
@@ -33,7 +40,7 @@ export class ContactComponent implements OnInit {
     this.commonService.contactForm(this.detail).subscribe((result)=>{
       console.log(result);
       this.loaderService.display(false);
-      this.commonService.notify(this.detail.emailID).subscribe(res=>{
+      this.commonService.notify(this.detail.emailID,this.detail.name).subscribe(res=>{
         console.log(res)
         this.detail.name = '';
         this.detail.emailID ='';

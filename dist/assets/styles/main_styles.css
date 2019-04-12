@@ -675,6 +675,7 @@ section
 {
 
 }
+
 .hamburger
 {
 	display: none;
@@ -1809,6 +1810,10 @@ section
 	width: 100%;
 	padding-bottom: 25px;
 	background: #FFFFFF;
+	min-height: calc( 100vh - 280px);
+}
+app-home  .events {
+	min-height: auto;
 }
 .events_row
 {

@@ -10,7 +10,10 @@ export class AppointmentsformentorComponent implements OnInit {
   public response:any;
   public students:any;
 
-  constructor(private service:CommonService ) {}
+  constructor(private service:CommonService){
+
+  }
+
 
   ngOnInit() {
     this.getappointments();

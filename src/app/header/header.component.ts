@@ -98,7 +98,8 @@ export class HeaderComponent implements OnInit {
 
   login(who){
     if(who === "student")
-   { console.log(this.details);
+   { 
+     console.log(this.details);
     this.commonService.login(this.details).subscribe((result)=>
       {
        console.log(result);
@@ -111,19 +112,17 @@ export class HeaderComponent implements OnInit {
      },err=>{alert("Wrong credentials")})
     }
     else{
+      console.log(this.details)
         this.commonService.mentorLogin(this.details).subscribe((result)=>
         {
          console.log(result);
          this.response  = result;
-         console.log(this.response.status);
-         if(this.response.status===404){
-           alert("Wrong credentials");
-           return;
-         }
+         console.log(this.response);
           localStorage.setItem('loggedIn', 'mentor');
           localStorage.setItem('id',this.response.id);
+          localStorage.setItem('email',  this.response.email );
           localStorage.setItem('name', this.response.Name);
-          this.router.navigate(['/profile']);
+          this.router.navigate(['/dashboard//profile']);
           
        },err=>{alert("Wrong credentials")})
   
@@ -132,22 +131,23 @@ export class HeaderComponent implements OnInit {
 
   reg(who){
     if(who === 'student'){
+      console.log(this.details_reg);
       if(this.details_reg.repeatPassword == this.details_reg.Password)
       {
         delete this.details_reg.repeatPassword;
         delete this.details_reg.remember;
         this.loaderService.display(true);
-        this.commonService.signup(this.details).subscribe((result)=>{
+        this.commonService.signup(this.details_reg).subscribe((result)=>{
         console.log(result);
         this.response = result;
         this.loaderService.display(false);
-        localStorage.setItem('loggedIn', 'student');
-        localStorage.setItem('id',this.response.id);
-        localStorage.setItem('name', this.response.Name);
-        this.router.navigate(['/dashboard/university']);
+        alert('Thank you for registrating with Us');
+        this.details_reg.email="";
+        this.details_reg.Name="";
+        this.details_reg.contactNo="";
         },
         (error)=>{
-          console.log(error);
+         alert("You have already regsitred with us");
         }
         )   
       }
@@ -161,14 +161,16 @@ export class HeaderComponent implements OnInit {
       delete this.details_reg.repeatPassword;
       delete this.details_reg.remember;
       this.loaderService.display(true);
-      this.commonService.mentorSignup(this.details).subscribe((result)=>{
+      this.commonService.mentorSignup(this.details_reg).subscribe((result)=>{
       console.log(result);
       this.response = result;
       this.loaderService.display(false);
-      localStorage.setItem('loggedIn', 'mentor');
-      localStorage.setItem('id',this.response.id);
-      localStorage.setItem('name', this.response.Name);
-      this.router.navigate(['/dashboard/profile']);
+      alert("Thank You for registration with us");
+      this.details_reg.contactNo="";
+      this.details_reg.Name="";
+      this.details_reg.email="";
+      delete this.details_reg.Password;
+
     },
       (error)=>{
        alert('Password does not match');
@@ -185,5 +187,15 @@ export class HeaderComponent implements OnInit {
         localStorage.setItem('loggedIn','student');
       else
         localStorage.setItem('loggedIn','mentor');
+    }
+
+    navbarOpen = false;
+
+    toggleNavbar() {
+        this.navbarOpen = !this.navbarOpen;
+    }
+
+    hideNavbar() {
+        this.navbarOpen = false;
     }
   }

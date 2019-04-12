@@ -10,11 +10,26 @@ declare var $ :any;
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  styles: [`
+    .container {
+      max-width: 1170px !important;
+    }
+    app-home .home {
+      
+    }
+    app-home .home {
 
+      width: 100%;
+      height: 595px !important;
+
+    }
+  `],
+  encapsulation: ViewEncapsulation.None
   // encapsulation: ViewEncapsulation.Native
 })
 export class HomeComponent implements OnInit {
   showPage : boolean = false;
+
   public university:any;
   public response;
   public eemail='';
@@ -48,6 +63,7 @@ export class HomeComponent implements OnInit {
     IELTS:'',
     TOEFL:'',
     GPA:'',
+    "email" :""
   }
   constructor(private http:HttpClient,private commonService :CommonService, private loaderService: LoaderService,private router:Router) {
     this.commonService.showHeadernFooter(true);
@@ -168,7 +184,7 @@ export class HomeComponent implements OnInit {
     else{
     this.commonService.scoreForm(this.detail).subscribe((result)=>{
       this.loaderService.display(false);
-      this.commonService.notify(this.detail.Email).subscribe(res=>{
+      this.commonService.notify(this.detail.Email,null).subscribe(res=>{
         console.log(res);
           this.detail.Name ='';
           this.detail.Email ='';
@@ -214,6 +230,20 @@ export class HomeComponent implements OnInit {
       alert('You need to login');
     else
       this.router.navigateByUrl('/dashboard');
+  }
+
+  add_to_cart(item){
+    console.log("yes");
+    if(this.detail.email !== ""){
+      console.log(this.detail.email);
+      this.http.get(`https://secret-atoll-46665.herokuapp.com/purchase_email/${this.detail.email}`).subscribe(res=>{
+        console.log(res);
+      })
+      document.getElementById(`checkoutmodal_${item}`).style.display='block';
+      document.getElementById(`purchasemodal_${item}`).style.display='none';
+    }
+    else
+      alert('Email should be given');
   }
 
 }

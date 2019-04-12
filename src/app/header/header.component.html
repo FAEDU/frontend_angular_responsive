@@ -11,17 +11,17 @@
             <div class="col">
               <div class="header_content d-flex flex-row align-items-center justify-content-start">
                   <div  class="logo_container d-flex flex-row align-items-center mr-auto">
-                  <div   id="flogo" class="logo_text_nav align-items-center"><a href="#"> <img style="height: 60px; margin-left: inherit; " src="assets/images/logo.png"></a></div>
+                  <div   id="flogo" class="logo_text_nav align-items-center"><a [routerLink]="['/home']"> <img style="height: 60px; margin-left: inherit; " src="assets/images/logo.png"></a></div>
                 </div>
                 <nav class="main_nav_contaner">
                   <ul class="main_nav">
-                    <li routerLinkActive="active current"><a  href="/home" >Home</a></li>
-          <li routerLinkActive="active current"><a [routerLink]="['/courses']" >Courses</a></li>
-          <li routerLinkActive="active current"><a [routerLink]="['/plansandpricing']" >Plans and Pricing</a></li>
-          <li routerLinkActive="active current"><a [routerLink]="['/instructor']" >Instructor</a></li>
-          <li routerLinkActive="active current"><a [routerLink]="['/events']" >Events</a></li>
-          <li routerLinkActive="active current"><a [routerLink]="['/blog']" >Blog</a></li>
-          <li routerLinkActive="active current"><a [routerLink]="['/contact']" >Contact</a></li>
+                    <li routerLinkActive="active current"><a  [routerLink]="['/home']" >Home</a></li>
+                    <li routerLinkActive="active current"><a [routerLink]="['/courses']" >Courses</a></li>
+                    <li routerLinkActive="active current"><a [routerLink]="['/plansandpricing']" >Plans and Pricing</a></li>
+                    <li routerLinkActive="active current"><a [routerLink]="['/instructor']" >Instructor</a></li>
+                    <li routerLinkActive="active current"><a [routerLink]="['/events']" >Events</a></li>
+                    <li routerLinkActive="active current"><a [routerLink]="['/blog']" >Blog</a></li>
+                    <li routerLinkActive="active current"><a [routerLink]="['/contact']" >Contact</a></li>
 
                   </ul>
                 </nav>
@@ -47,7 +47,7 @@
                     </li>
                   </ul>      
                   
-                  <div class="hamburger menu_mm">
+                  <div class="hamburger menu_mm" (click)="toggleNavbar()">
                     <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
                   </div>
                 </div>
@@ -59,11 +59,11 @@
       </div>
     </header>
     
-  <div class="menu d-flex flex-column text-center menu_mm trans_400">
-    <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+  <div class="menu d-flex flex-column text-center menu_mm trans_400" [ngClass]="{ 'active': navbarOpen }">
+    <div class="menu_close_container" (click)="hideNavbar()"><div class="menu_close"><div></div><div></div></div></div>
     <nav class="menu_nav">
       <ul style="margin-top: 70px;margin-bottom: 10px;" class="menu_mm">
-      <li><a href="/home">Home</a></li>
+      <li><a [routerLink]="['/home']">Home</a></li>
       <li ><a [routerLink]="['/courses']" >Courses</a></li>
       <li ><a [routerLink]="['/plansandpricing']" >Plans and Pricing</a></li>
       <li ><a [routerLink]="['/events']" >Events</a></li>
@@ -116,7 +116,7 @@
     </div>
 
     <div class="container">
-      <label for="uname"><b>Username</b></label>
+      <label for="uname"><b>Email</b></label>
       <input type="text" placeholder="Enter Username" [(ngModel)]="details.email" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
@@ -159,7 +159,7 @@
       <label for="uname"><b>Contact No.</b></label>
       <input type="text" placeholder="Contact No." [(ngModel)]="details_reg.contactNo" name="uname" required>
 
-      <label for="uname"><b>Username</b></label>
+      <label for="uname"><b>Email</b></label>
       <input type="text" placeholder="Username" [(ngModel)]="details_reg.email" name="uname" required>
 
 
@@ -186,7 +186,7 @@
 
 <!-- Mentor Login Modal Start-->
 
-<div id="mentorloginmodal" class="modal"  style="position: fixed;">
+<div id="mentorloginmodal" class="modal mentorloginmodal"  style="position: fixed;">
   
   <form class="modal-content animate" action="/action_page.php">
     <div class="imgcontainer">
@@ -195,11 +195,11 @@
     </div>
 
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="uname"><b>Email</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" [(ngModel)]="details.email" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="details.password" required>
         
       <button class="button1" type="submit"(click)="login('mentor')">Login</button>
       <span style="float: left;"><a class="Forgot"(click)="reset('mentor')">Forget Password?</a></span>
@@ -234,23 +234,23 @@
 
     <div class="container">
       <label for="uname"><b>Name</b></label>
-      <input type="text" placeholder="Name" name="uname" required>
+      <input type="text" placeholder="Name" name="uname1" [(ngModel)]="details_reg.Name" required>
 
       <label for="uname"><b>Contact No.</b></label>
-      <input type="text" placeholder="Contact No." name="uname" required>
+      <input type="text" placeholder="Contact No." name="uname2" [(ngModel)]="details_reg.contactNo" required>
 
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Username" name="uname" required>
+      <label for="uname"><b>Email</b></label>
+      <input type="text" placeholder="Username" name="uname3" [(ngModel)]="details_reg.email" required>
 
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Password" name="psw" required>
+      <input type="password" placeholder="Password" name="psw1" [(ngModel)]="details_reg.Password" required>
 
 
       <label for="psw"><b>Confirm Password</b></label>
-      <input type="password" placeholder="Confirm Password" name="psw" required>
+      <input type="password" placeholder="Confirm Password" name="psw2" [(ngModel)]="details_reg.repeatPassword" required>
         
-      <button class="button1" type="submit" (click)="reg('mentor')">Login</button>
+      <button class="button1" type="submit" (click)="reg('mentor')">Register</button>
       
     </div>
 

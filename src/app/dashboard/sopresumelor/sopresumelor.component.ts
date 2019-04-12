@@ -63,7 +63,7 @@ export class SopresumelorComponent implements OnInit {
       if(this.details.resumelink!=='NA'){
         this.isuploadedresume=false;
       }
-        this.details.Name=localStorage.getItem('name');
+        this.details.Name=localStorage.getItem('email');
         this.details.S_ID=localStorage.getItem('id');
         this.service.sendfileUrl(this.details).subscribe(res => {
         this.response = res;

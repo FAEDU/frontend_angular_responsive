@@ -31,7 +31,7 @@
         <!-- HEADER MOBILE-->
         <div style="position: fixed;height: 50px;width: 100%;background-color: white;z-index: 100" class="  d-lg-none">
             <div class="logo">
-                <a href="#">
+                <a [routerLink]="['/home']">
                     <img src="assets/images/icon/logo.png" />
                 </a>
             </div>
@@ -105,7 +105,7 @@
                             </ul>
         </nav>
                     <div class="content" style="color: black;font-weight: 700;">
-                    <a (click)="logout()"><i class="zmdi zmdi-power" (click)="logout()"></i>Logout</a>
+                    <a (click)="logout()"><i class="zmdi zmdi-power" (click)="logout()"></i>Logout-</a>
                     </div>
         <div class="menu_extra">
             <div class="menu_phone"><span class="menu_title">phone:</span>+91 1234567890</div>
@@ -118,7 +118,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
+                <a [routerLink]="['/home']">
                     <img src="assets/images/icon/logo.png" />
                 </a>
             </div>
@@ -163,7 +163,7 @@
                                 <i class="fas fa-usd"></i>FOREX Help</a>
                         </li>
                         <li>
-                            <a href="/dashboard/appointmentbooked">
+                            <a [routerLink]="['/dashboard/appointmentbooked']" [routerLinkActive]="'is-active'">
                                 <i class="fas fa-table"></i>Bookings With Mentors</a>
                         </li>
 
@@ -176,7 +176,7 @@
                                     <i class="fas fa-chart-bar"></i>Profile</a>
                             </li>
                             <li>
-                                <a href="/dashboard/appointmentbookedmentor">
+                                <a [routerLink]="['/dashboard/appointmentbookedmentor']">
                                     <i class="fas fa-table"></i>AppointmentsRecevied</a>
                             </li>
                             </ul>
@@ -193,7 +193,7 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <div style="margin-left:73%" class="header-button">
+                            <div style="margin-left:70%" class="header-button">
                                     <div class="account-item ">
                                              <div class="content">
                                                 <img src="assets/images/display.png" alt="Avatar" class="avatar">

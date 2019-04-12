@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService, LoaderService } from '../../services/common.service';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-mentor-list',
@@ -7,6 +9,22 @@ import { CommonService, LoaderService } from '../../services/common.service';
   styleUrls: ['./mentor-list.component.css']
 })
 export class MentorListComponent implements OnInit {
+
+
+  save()
+  {
+    if(this.modal.Time===''||this.modal.Date===''){
+      return;
+    }
+    this.commonService.appointmentform(this.modal,this.mentorID,this.mentorName,this.mentorPic,this.mentorEmail).subscribe((result)=>
+    {
+      console.log(result);
+      this.response  = result;
+      document.getElementById("closebutton").click();
+      // document.getElementById('purchasemodal_7').style.display='none';
+    })
+  }
+
   response: any;
   public username;
   mentorID:any;
@@ -22,9 +40,14 @@ export class MentorListComponent implements OnInit {
   modal={
     Time:'',
     Date:'',
-  }
+  };
+
+  detail =
+      {
+        "email" :""
+      };
   
-  constructor(private commonService : CommonService, private loaderService : LoaderService) { }
+  constructor(private http:HttpClient,private commonService : CommonService, private loaderService : LoaderService) { }
   
 
   ngOnInit() {
@@ -81,19 +104,6 @@ export class MentorListComponent implements OnInit {
     this.mentorName=name;
     this.mentorEmail=email;
   }
-  
-submit()
-  {
-    if(this.modal.Time===''||this.modal.Date===''){
-      return;
-    }
-    this.commonService.appointmentform(this.modal,this.mentorID,this.mentorName,this.mentorPic,this.mentorEmail).subscribe((result)=>
-    {
-     console.log(result);
-     this.response  = result;
-     document.getElementById("closebutton").click();
-   })
-  }
 
   applyfilter(){
     this.filteredmentordata=this.mentorData;
@@ -119,4 +129,5 @@ submit()
     this.filteredmentordata=this.mentorData;
     
   }
+
 }

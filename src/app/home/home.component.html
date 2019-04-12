@@ -69,18 +69,18 @@
 							<div   class="col-lg-6 register_col">
 											<select class="form_input" name="country" [(ngModel)]="detail.Term">
 												<option value=''>Select Your Term</option>
-												<option value="GRE"> Fall 2019 </option>
-										<option value="GRE">Spring 2019</option>
-										<option value="GRE"> Fall 2020 </option>
-										<option value="GRE">Spring 2020</option>
-										<option value="GRE"> Fall 2021 </option>
-										<option value="GRE">Spring 2021</option>
-										<option value="GRE"> Fall 2022 </option>
-										<option value="GRE">Spring 2022</option>
-										<option value="GRE">Fall 2023 </option>
-										<option value="GRE">Spring 2023</option>
-										<option value="GRE"> Fall 2024 </option>
-										<option value="GRE">Spring 2024</option>
+												<option value="Fall 2019"> Fall 2019 </option>
+										<option value="Spring 2019">Spring 2019</option>
+										<option value=" Fall 2020"> Fall 2020 </option>
+										<option value="Spring 2020">Spring 2020</option>
+										<option value="Fall 2021"> Fall 2021 </option>
+										<option value="Spring 2021">Spring 2021</option>
+										<option value="Fall 2022"> Fall 2022 </option>
+										<option value="Spring 2022">Spring 2022</option>
+										<option value="Fall 2023 ">Fall 2023 </option>
+										<option value="Spring 2023">Spring 2023</option>
+										<option value="Fall 2024"> Fall 2024 </option>
+										<option value="Spring 2024">Spring 2024</option>
 											</select>
 							</div>
 															<div  class="col-lg-6 register_col">
@@ -139,7 +139,7 @@
 						<div class="course_footer1 d-flex flex-row align-items-center justify-content-start">
 							<div class="course_students1"><a href="/plansandpricing"><h6 style="text-align: center">Know More</h6></a></div>
 							<div class="course_rating1 ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
-							<div style="text-color:white;" class="course_mark1 course_free1 trans_200"><p style="color:white;">₹ 4999</p></div>
+							<div style="text-color:white;" class="course_mark1 course_free1 trans_200"><p onclick="document.getElementById('purchasemodal_1').style.display='block'" style="color:white;">₹ 4999</p></div>
 						</div>
 					</div>
 				</div>
@@ -162,7 +162,7 @@
 						<div class="course_footer1 d-flex flex-row align-items-center justify-content-start">
 							<div class="course_students1"><a href="/plansandpricing"><h6 style="text-align: center">Know More</h6></a></div>
 							<div class="course_rating1 ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
-							<div class="course_mark1 course_free1 trans_200"><p style="color:white;">₹ 29999</p></div>
+							<div class="course_mark1 course_free1 trans_200"><p onclick="document.getElementById('purchasemodal_7').style.display='block'" style="color:white;">₹ 29999</p></div>
 						</div>
 					</div>
 				</div>
@@ -185,7 +185,7 @@
 						<div class="course_footer1 d-flex flex-row align-items-center justify-content-start">
 							<div class="course_students1"><a href="/plansandpricing"><h6 style="text-align: center">Know More</h6></a></div>
 							<div class="course_rating1 ml-auto"><i class="fa fa-star" aria-hidden="true"></i><span>4,5</span></div>
-							<div style="text-color:white;" class="course_mark1 course_free1 trans_200"><p style="color:white;">₹ 1999</p></div>
+							<div style="text-color:white;" class="course_mark1 course_free1 trans_200"><p  onclick="document.getElementById('purchasemodal_3').style.display='block'"style="color:white;">₹ 999</p></div>
 						</div>
 						
 					</div>
@@ -258,7 +258,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="home_button13 text-center trans_200"><a href="/mentor/login">Register as Mentor</a></div>
+			<div  style="z-index: 99;" class="home_button13 text-center trans_200"><a onclick="document.getElementById('mentorloginmodal').style.display='block'" [routerLink]="['/home']">Register as Mentor</a></div>
 		</div>
 	</div>
 
@@ -372,7 +372,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="home_button13 text-center trans_200"><a href="/student/login">Register as Student</a></div>
+			<div class="home_button13 text-center trans_200"><a onclick="document.getElementById('studentloginmodal').style.display='block'" [routerLink]="['/home']">Register as Student</a></div>
 		</div>
 	</div>
 
@@ -582,6 +582,261 @@
 </div>
 </div>
 
+	  <!-- Email Modal Start-->
+
+	  <div id="purchasemodal_1" class="modal" style="position: fixed;">
+
+		  <form class="modal-content animate" >
+			  <div class="imgcontainer">
+				  <span onclick="document.getElementById('purchasemodal_1').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+			  </div>
+
+			  <div class="container">
+				  <label for="uname"><b>Email</b></label>
+				  <input type="text" placeholder="Enter Email" name="uname" [(ngModel)]="detail.email" required>
+
+
+
+				  <button (click)="add_to_cart(1)" class="button1" type="submit">Add to Cart</button>
+
+			  </div>
+
+
+			  <div style="text-align: center;" class="container1" >
+				  <button   type="button" onclick="document.getElementById('purchasemodal_1').style.display='none'" class="cancelbtn button1">Cancel</button>
+			  </div>
+		  </form>
+	  </div>
+
+	  <!-- Email Modal End-->
+
+	  <!-- Buy Modal Start-->
+
+	  <div id="checkoutmodal_1" class="modal" style="position: fixed;">
+
+		  <form class="modal-content animate" >
+			  <div class="imgcontainer">
+				  <span onclick="document.getElementById('checkoutmodal_1').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+			  </div>
+
+			  <div class="container" style="margin-top: 5%;">
+
+
+				  <button onclick="document.getElementById('checkoutmodal_1').style.display='none',document.getElementById('buymodal_1').style.display='block'" class="button1" type="submit">Proceed to Checkout</button>
+
+			  </div>
+
+
+			  <div style="text-align: center;" class="container1" >
+				  <button  type="button" onclick="document.getElementById('checkoutmodal_1').style.display='none'" class="cancelbtn button1">Cancel</button>
+			  </div>
+		  </form>
+	  </div>
+
+	  <div id="buymodal_1" class="modal" style="position: fixed;">
+
+		  <form id="buyform_1" class="modal-content animate" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			  <div class="imgcontainer">
+				  <span onclick="document.getElementById('buymodal_1').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+			  </div>
+
+			  <div class="container" style="margin-top: 5%;">
+				  <label><strong>Course:</strong> Statement Of Purpose</label><br>
+				  <label><strong>Price:</strong> ₹ 4999</label><hr>
+				  <label><strong>Total:</strong> ₹ 4999</label>
+
+
+				  <!--<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">-->
+				  <input type="hidden" name="cmd" value="_s-xclick">
+				  <input type="hidden" name="hosted_button_id" value="35AF3GYGJA2C4">
+				  <input onclick="document.getElementById('buyform_1').submit();" type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+				  <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+				  <!--</form>-->
+
+
+
+			  </div>
+
+
+			  <div style="text-align: center;" class="container1" >
+				  <button  type="button" onclick="document.getElementById('buymodal_1').style.display='none'" class="cancelbtn button1">Cancel</button>
+			  </div>
+		  </form>
+	  </div>
+
+	  <!-- Buy Modal End-->
+
+	  <!-- Email Modal Start-->
+
+	  <div id="purchasemodal_7" class="modal" style="position: fixed;">
+
+		  <form class="modal-content animate" >
+			  <div class="imgcontainer">
+				  <span onclick="document.getElementById('purchasemodal_7').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+			  </div>
+
+			  <div class="container">
+				  <label for="uname"><b>Email</b></label>
+				  <input type="text" placeholder="Enter Email" name="uname" [(ngModel)]="detail.email" required>
+
+
+
+				  <button (click)="add_to_cart(7)"class="button1" type="submit">Add to Cart</button>
+
+			  </div>
+
+
+			  <div style="text-align: center;" class="container1" >
+				  <button   type="button" onclick="document.getElementById('purchasemodal_7').style.display='none'" class="cancelbtn button1">Cancel</button>
+			  </div>
+		  </form>
+	  </div>
+
+	  <!-- Email Modal End-->
+
+	  <!-- Buy Modal Start-->
+
+	  <div id="checkoutmodal_7" class="modal" style="position: fixed;">
+
+		  <form class="modal-content animate" >
+			  <div class="imgcontainer">
+				  <span onclick="document.getElementById('checkoutmodal_7').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+			  </div>
+
+			  <div class="container" style="margin-top: 5%;">
+
+
+				  <button onclick="document.getElementById('checkoutmodal_7').style.display='none',document.getElementById('buymodal_7').style.display='block'" class="button1" type="submit">Proceed to Checkout</button>
+
+			  </div>
+
+
+			  <div style="text-align: center;" class="container1" >
+				  <button  type="button" onclick="document.getElementById('checkoutmodal_7').style.display='none'" class="cancelbtn button1">Cancel</button>
+			  </div>
+		  </form>
+	  </div>
+
+	  <div id="buymodal_7" class="modal" style="position: fixed;">
+
+		  <form id="buyform_7" class="modal-content animate" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			  <div class="imgcontainer">
+				  <span onclick="document.getElementById('buymodal_7').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+			  </div>
+
+			  <div class="container" style="margin-top: 5%;">
+				  <label><strong>Course:</strong> MBA/MIM Guidance</label><br>
+				  <label><strong>Price:</strong> ₹ 29999</label><hr>
+				  <label><strong>Total:</strong> ₹ 29999</label>
+
+
+				  <input type="hidden" name="cmd" value="_s-xclick">
+				  <input type="hidden" name="hosted_button_id" value="D2QXDTNRRB52E">
+				  <input onclick="document.getElementById('buyform_7').submit();" type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+				  <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+
+			  </div>
+
+
+			  <div style="text-align: center;" class="container1" >
+				  <button  type="button" onclick="document.getElementById('buymodal_7').style.display='none'" class="cancelbtn button1">Cancel</button>
+			  </div>
+		  </form>
+	  </div>
+
+	  <!-- Buy Modal End-->
+
+	  <!-- Email Modal Start-->
+
+	  <div id="purchasemodal_3" class="modal" style="position: fixed;">
+
+		  <form class="modal-content animate" >
+			  <div class="imgcontainer">
+				  <span onclick="document.getElementById('purchasemodal_3').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+			  </div>
+
+			  <div class="container">
+				  <label for="uname"><b>Email</b></label>
+				  <input type="text" placeholder="Enter Email" name="uname" [(ngModel)]="detail.email" required>
+
+
+
+				  <button (click)="add_to_cart(3)"class="button1" type="submit">Add to Cart</button>
+
+			  </div>
+
+
+			  <div style="text-align: center;" class="container1" >
+				  <button   type="button" onclick="document.getElementById('purchasemodal_3').style.display='none'" class="cancelbtn button1">Cancel</button>
+			  </div>
+		  </form>
+	  </div>
+
+	  <!-- Email Modal End-->
+
+	  <!-- Buy Modal Start-->
+
+	  <div id="checkoutmodal_3" class="modal" style="position: fixed;">
+
+		  <form class="modal-content animate" >
+			  <div class="imgcontainer">
+				  <span onclick="document.getElementById('checkoutmodal_3').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+			  </div>
+
+			  <div class="container" style="margin-top: 5%;">
+
+
+				  <button onclick="document.getElementById('checkoutmodal_3').style.display='none',document.getElementById('buymodal_7').style.display='block'" class="button1" type="submit">Proceed to Checkout</button>
+
+			  </div>
+
+
+			  <div style="text-align: center;" class="container1" >
+				  <button  type="button" onclick="document.getElementById('checkoutmodal_3').style.display='none'" class="cancelbtn button1">Cancel</button>
+			  </div>
+		  </form>
+	  </div>
+
+	  <div id="buymodal_3" class="modal" style="position: fixed;">
+
+		  <form id="buyform_7" class="modal-content animate" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			  <div class="imgcontainer">
+				  <span onclick="document.getElementById('buymodal_3').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+			  </div>
+
+			  <div class="container" style="margin-top: 5%;">
+				  <label><strong>Course:</strong> Personalized LORs</label><br>
+				  <label><strong>Price:</strong> ₹ 999</label><hr>
+				  <label><strong>Total:</strong> ₹ 999</label>
+
+
+				  <input type="hidden" name="cmd" value="_s-xclick">
+				  <input type="hidden" name="hosted_button_id" value="VG8USF82ZXAFG">
+				  <input onclick="document.getElementById('buyform_3').submit();" type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+				  <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+
+			  </div>
+
+
+			  <div style="text-align: center;" class="container1" >
+				  <button  type="button" onclick="document.getElementById('buymodal_3').style.display='none'" class="cancelbtn button1">Cancel</button>
+			  </div>
+		  </form>
+	  </div>
+
+	  <!-- Buy Modal End-->
+
+
+
 <!--Footer-->
 	<app-footer ></app-footer>
 	<!--End Of Footer-->
@@ -594,4 +849,3 @@
 <script src="js/custom.js"></script>
 <!-- </div> -->
 
-	
